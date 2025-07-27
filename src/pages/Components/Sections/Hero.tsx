@@ -1,4 +1,3 @@
-import Text from "../Typography/Text.tsx";
 import TextType from "../Typography/TextType.tsx";
 import Header from "../Typography/Header.tsx";
 import Button from "../Button.tsx";
