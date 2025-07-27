@@ -16,7 +16,7 @@ export const Home = () => {
         enableMouseInteraction={false}
         mouseRadius={0.3}
         colorNum={4}
-        waveAmplitude={0.33}
+        waveAmplitude={0.35}
         waveFrequency={3}
         waveSpeed={0.05}
       />
