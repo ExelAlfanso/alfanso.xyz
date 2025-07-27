@@ -1,4 +1,3 @@
-import { Menu } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { navigationItems } from "../../Datas/navbarDatas";
 import BurgerMenu from "./Icons/BurgerMenu";

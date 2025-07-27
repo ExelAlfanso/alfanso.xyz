@@ -1,5 +1,4 @@
 import React from "react";
-import Text from "./Typography/Text.tsx";
 
 interface ButtonProps {
   children?: React.ReactNode;
