@@ -320,7 +320,7 @@ export default function Dither({
   waveColor = [0.5, 0.5, 0.5],
   colorNum = 4,
   pixelSize = 2,
-  disableAnimation = false,
+  disableAnimation = true,
   enableMouseInteraction = true,
   mouseRadius = 1,
   children,
