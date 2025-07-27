@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #130303;
+  --color-secondary: #2d080a;
+  --color-tertiary: #7c3626;
+  --color-accent: #ffcdbc;
+  --color-accent-two: #f5853f;
+}
+
+.font-heading,
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk";
+}
+
+.font-accent {
+  font-family: "Playfair Display";
+}
+
+.font-p {
+  font-family: "Work Sans";
+}
+
+.dither-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+}
