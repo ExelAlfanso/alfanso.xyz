@@ -19,8 +19,8 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
           <div className="flex flex-col items-center justify-center text-xl lg:text-2xl text-center ">
             <span className="font-bold mx-2">{item.labelOne}</span>
             {item.labelAccent}
-            <span className="font-bold mx-2 mb-5">{item.labelTwo}</span>
-            <div className="font-heading font-bold mx-2 text-3xl mb-5">
+            <span className="font-bold mx-2 ">{item.labelTwo}</span>
+            <div className="font-heading font-bold mx-2 text-3xl mb-6">
               {item.year}
             </div>
           </div>

@@ -25,11 +25,9 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
             hELLO i’M eXEL,
           </Header>
           I'm a developer experienced in
-          <span className="font-bold mx-2 text-xl lg:text-[24px] xl:text-[36px]">
-            WEB, APP, AND GAME DEVELOPMENT
-          </span>
+          <span className="font-bold mx-2">WEB, APP, AND GAME DEVELOPMENT</span>
           for 3 years. Current exploring the world of
-          <span className=" font-bold mx-2 text-xl">WEB DEVELOPMENT</span>
+          <span className=" font-bold mx-2">WEB DEVELOPMENT</span>
           and i'm open to collaborations that blend design and code.
         </Text>
       </div>

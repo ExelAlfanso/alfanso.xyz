@@ -1,4 +1,4 @@
-import { useRef, useEffect, forwardRef, type ReactNode } from "react";
+import { useRef, useEffect, forwardRef } from "react";
 import {
   Canvas,
   useFrame,
@@ -65,7 +65,7 @@ float cnoise(vec2 P) {
   return 2.3 * mix(n_x.x, n_x.y, fade_xy.y);
 }
 
-const int OCTAVES = 4;
+const int OCTAVES = 2;
 float fbm(vec2 p) {
   float value = 0.0;
   float amp = 1.0;
@@ -310,7 +310,6 @@ interface DitherProps {
   disableAnimation?: boolean;
   enableMouseInteraction?: boolean;
   mouseRadius?: number;
-  children?: ReactNode;
 }
 
 export default function Dither({
@@ -320,32 +319,28 @@ export default function Dither({
   waveColor = [0.5, 0.5, 0.5],
   colorNum = 4,
   pixelSize = 2,
-  disableAnimation = true,
+  disableAnimation = false,
   enableMouseInteraction = true,
   mouseRadius = 1,
-  children,
 }: DitherProps) {
   return (
-    <div className="absolute inset-0 -z-10">
-      {children}
-      <Canvas
-        className="dither-container"
-        camera={{ position: [0, 0, 6] }}
-        dpr={window.devicePixelRatio}
-        gl={{ antialias: true, preserveDrawingBuffer: true }}
-      >
-        <DitheredWaves
-          waveSpeed={waveSpeed}
-          waveFrequency={waveFrequency}
-          waveAmplitude={waveAmplitude}
-          waveColor={waveColor}
-          colorNum={colorNum}
-          pixelSize={pixelSize}
-          disableAnimation={disableAnimation}
-          enableMouseInteraction={enableMouseInteraction}
-          mouseRadius={mouseRadius}
-        />
-      </Canvas>
-    </div>
+    <Canvas
+      className="dither-container"
+      camera={{ position: [0, 0, 6] }}
+      dpr={window.devicePixelRatio}
+      gl={{ antialias: true, preserveDrawingBuffer: true }}
+    >
+      <DitheredWaves
+        waveSpeed={waveSpeed}
+        waveFrequency={waveFrequency}
+        waveAmplitude={waveAmplitude}
+        waveColor={waveColor}
+        colorNum={colorNum}
+        pixelSize={pixelSize}
+        disableAnimation={disableAnimation}
+        enableMouseInteraction={enableMouseInteraction}
+        mouseRadius={mouseRadius}
+      />
+    </Canvas>
   );
 }

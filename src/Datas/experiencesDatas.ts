@@ -16,11 +16,18 @@ export const experiencesDatas: ExperiencesItems[] = [
   },
   {
     id: 2,
-    labelOne: "4TH PLACE",
-    labelAccent: "I/O FESTIVAL UNIVERSITAS TARUMANAGARA",
-    labelTwo: "GAME DEVELOPMENT COMPETITION",
-    year: "2024",
+    labelOne: "PARTICIPANT OF",
+    labelAccent: "GAMESEED 2024",
+    labelTwo: "INDONESIA",
+    year: "2025-PRESENT",
   },
+  // {
+  //   id: 2,
+  //   labelOne: "4TH PLACE",
+  //   labelAccent: "I/O FESTIVAL UNIVERSITAS TARUMANAGARA",
+  //   labelTwo: "GAME DEVELOPMENT COMPETITION",
+  //   year: "2024",
+  // },
   {
     id: 3,
     labelOne: "IGDX BOOTCAMP",
