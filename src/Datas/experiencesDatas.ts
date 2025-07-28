@@ -30,7 +30,7 @@ export const experiencesDatas: ExperiencesItems[] = [
   // },
   {
     id: 3,
-    labelOne: "IGDX BOOTCAMP",
+    labelOne: "IGDX BOOTCAMP 2024",
     labelAccent: "MENTEE",
     labelTwo: "",
     year: "2024",
