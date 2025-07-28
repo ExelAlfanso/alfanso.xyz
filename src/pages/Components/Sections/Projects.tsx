@@ -4,6 +4,8 @@ import Text from "../Typography/Text.tsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard } from "swiper/modules";
 import "../../../../node_modules/swiper/swiper.css";
+import { motion } from "framer-motion";
+import { fadeInAnimation } from "../../../Constants/animationVariants.ts";
 
 import { projectDatas } from "../../../Datas/projectDatas.ts";
 
@@ -14,7 +16,13 @@ interface ProjectsProps {
 
 const Projects: React.FC<ProjectsProps> = ({ id, className }) => {
   return (
-    <section id={id} className={`mb-10 overflow-hidden ${className}`}>
+    <motion.section
+      variants={fadeInAnimation}
+      initial="initial"
+      whileInView="animate"
+      id={id}
+      className={`mb-10 overflow-hidden ${className}`}
+    >
       <Header className="font-bold mb-10" size="subtitle">
         PROJECTS
       </Header>
@@ -51,7 +59,7 @@ const Projects: React.FC<ProjectsProps> = ({ id, className }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </motion.section>
   );
 };
 

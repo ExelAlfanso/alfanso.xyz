@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../Typography/Header";
 import Text from "../Typography/Text";
 import { techStackDatas } from "../../../Datas/techStackDatas";
+import { motion } from "framer-motion";
+import { fadeInAnimation } from "../../../Constants/animationVariants";
 
 interface TechStackProps {
   id: string;
@@ -10,7 +12,13 @@ interface TechStackProps {
 
 const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
   return (
-    <section id={id} className={`mb-75 ${className}`}>
+    <motion.section
+      variants={fadeInAnimation}
+      initial="initial"
+      whileInView="animate"
+      id={id}
+      className={`mb-75 ${className}`}
+    >
       <Header className="font-bold mb-10" size="subtitle">
         TECH STACK
       </Header>
@@ -28,7 +36,7 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,15 +1,36 @@
 import React from "react";
 import Header from "../Typography/Header";
 import Text from "../Typography/Text";
+import { motion } from "framer-motion";
 
 interface AboutProps {
   id: string;
   className?: string;
 }
 
+const fadeInAnimation = {
+  initial: {
+    opacity: 0,
+    y: 100,
+    duration: 1000,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    duration: 1000,
+  },
+};
 const About: React.FC<AboutProps> = ({ id, className }) => {
   return (
-    <section id={id} className={` font-accent mx-15 mb-60 ${className}`}>
+    <motion.section
+      variants={fadeInAnimation}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+      id={id}
+      className={`
+        font-accent mx-15 mb-60 ${className}`}
+    >
       <Header
         className="lg:text-6xl xl:text-8xl font-bold mb-10"
         size="subtitle"
@@ -31,7 +52,7 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
           and i'm open to collaborations that blend design and code.
         </Text>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -11,7 +11,7 @@ const Hero: React.FC<HeroProps> = ({ id, className }) => {
   return (
     <section
       id={id}
-      className={`lg:gap-20 pt-50 flex flex-col lg:flex-row items-center justify-center w-full z-10 mb-65 lg:mb-60${className} `}
+      className={`lg:gap-20 pt-50 flex flex-col lg:flex-row items-center justify-center w-full z-10 mb-60 lg:mb-100 ${className} `}
     >
       <div className="flex flex-col items-left justify-center">
         <Header
@@ -19,11 +19,11 @@ const Hero: React.FC<HeroProps> = ({ id, className }) => {
           className="lg:text-left lg:mb-5 h-30 lg:h-50 xl:h-80 w-85 lg:w-100 xl:w-130 "
         >
           <TextType
-            text={"hI. mY nAME IS eXEL bOY aLFANSO."}
+            text={"Hi! My name is Exel Boy Alfanso."}
             typingSpeed={60}
             showCursor={true}
             cursorCharacter="|"
-            className="text-accent lg:text-6xl xl:text-7xl "
+            className="text-accent lg:text-6xl xl:text-7xl xl:py-20"
             loop={true}
           />
         </Header>
