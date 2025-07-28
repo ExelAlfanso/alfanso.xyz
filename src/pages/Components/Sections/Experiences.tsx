@@ -16,7 +16,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
   return (
     <section
       id={id}
-      className={`font-accent mx-15 lg:mx-60 mb-60 ${className}`}
+      className={`font-accent mx-15 lg:mx-60 mb-60 ${className} overflow-hidden`}
     >
       <Header className="font-bold mb-10 " size="subtitle">
         EXPERIENCES

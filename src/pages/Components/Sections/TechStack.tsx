@@ -17,7 +17,7 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
       initial="initial"
       whileInView="animate"
       id={id}
-      className={`mb-75 ${className}`}
+      className={`mb-75 ${className} overflow-hidden`}
     >
       <Header className="font-bold mb-10" size="subtitle">
         TECH STACK
