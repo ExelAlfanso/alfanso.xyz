@@ -1,4 +1,3 @@
-// import Dither from "./Background/Dither";
 import Hero from "./Components/Sections/Hero";
 import About from "./Components/Sections/About";
 import TechStack from "./Components/Sections/TechStack";
@@ -7,9 +6,6 @@ import Projects from "./Components/Sections/Projects";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Dither from "./Background/Dither";
-import Aurora from "./Background/Aurora";
-// import LetterGlitch from "./Background/LetterGlitch.tsx";
-// import Aurora from "./Background/Aurora";
 
 export const Home = () => {
   return (
