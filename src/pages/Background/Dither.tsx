@@ -5,7 +5,8 @@ import {
   useThree,
   type ThreeEvent,
 } from "@react-three/fiber";
-import { EffectComposer, wrapEffect } from "@react-three/postprocessing";
+// import { EffectComposer, wrapEffect } from "@react-three/postprocessing";
+import { wrapEffect } from "@react-three/postprocessing";
 import { Effect } from "postprocessing";
 import * as THREE from "three";
 
@@ -203,8 +204,8 @@ function DitheredWaves({
   waveFrequency,
   waveAmplitude,
   waveColor,
-  colorNum,
-  pixelSize,
+  // colorNum,
+  // pixelSize,
   disableAnimation,
   enableMouseInteraction,
   mouseRadius,
@@ -283,9 +284,9 @@ function DitheredWaves({
         />
       </mesh>
 
-      <EffectComposer>
+      {/* <EffectComposer>
         <RetroEffect colorNum={colorNum} pixelSize={pixelSize} />
-      </EffectComposer>
+      </EffectComposer> */}
 
       <mesh
         onPointerMove={handlePointerMove}
