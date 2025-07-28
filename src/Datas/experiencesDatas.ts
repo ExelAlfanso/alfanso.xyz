@@ -35,4 +35,11 @@ export const experiencesDatas: ExperiencesItems[] = [
     labelTwo: "",
     year: "2024",
   },
+  {
+    id: 4,
+    labelOne: "AWARDEE OF",
+    labelAccent: "BAKTI BCA",
+    labelTwo: "SCHOLARSHIP 2024",
+    year: "2024-2025",
+  },
 ];
