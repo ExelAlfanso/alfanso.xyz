@@ -10,17 +10,27 @@ interface ExperiencesProps {
 
 const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
   return (
-    <section id={id} className={`font-accent mx-15 mb-60 ${className}`}>
-      <Header className="font-bold mb-10  " size="subtitle">
+    <section
+      id={id}
+      className={`font-accent mx-15 lg:mx-60 mb-60 ${className}`}
+    >
+      <Header className="font-bold mb-10 " size="subtitle">
         EXPERIENCES
       </Header>
       <Text>
-        {experiencesDatas.map((item) => (
-          <div className="flex flex-col items-center justify-center text-xl lg:text-2xl text-center ">
-            <span className="font-bold mx-2">{item.labelOne}</span>
-            {item.labelAccent}
-            <span className="font-bold mx-2 ">{item.labelTwo}</span>
-            <div className="font-heading font-bold mx-2 text-3xl mb-6">
+        {experiencesDatas.map((item, index) => (
+          <div
+            key={index}
+            className={`flex flex-col lg:${
+              index % 2 != 0 ? "flex-row-reverse" : "flex-row"
+            } items-center justify-center text-xl lg:text-2xl text-center `}
+          >
+            <div className="flex flex-row lg:block font-heading lg:text-3xl xl:text-5xl">
+              <span className="font-bold mx-2">{item.labelOne}</span>
+              <span className="font-accent">{item.labelAccent}</span>
+              <span className="font-bold mx-2 ">{item.labelTwo}</span>
+            </div>
+            <div className=" font-bold mx-2 lg:text-3xl xl:text-8xl mb-6 lg:mb-12 font-heading">
               {item.year}
             </div>
           </div>

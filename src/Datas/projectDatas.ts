@@ -13,14 +13,15 @@ export const projectDatas: ProjectItems[] = [
     img: "ruins.png",
     category: "GAME",
     description:
-      "THIS PROJECT REALLY IS NOSTALGIC BECAUSE IT IS MY FIRST PROPER GAME MADE WITH UNITY AND COLLAB WITH MY COLLEGE FRIENDS",
+      "MY FIRST COLLABORATION GAME PROJECT, AWARDED AS 4TH PLACE ON I/O FESTIVAL 2024 GAME DEVELOPMENT COMPETITION.",
   },
   {
     id: 2,
     name: "CARROTS MY WAY HOME",
     img: "carrots.png",
     category: "GAME",
-    description: "HUFFT, MY FIRST GAMEJAM WAS A NIGHTMARE, IT WON AN AWARD THO",
+    description:
+      "HUFFT, MY FIRST GAMEJAM WAS A NIGHTMARE, AWARDED AS 2ND PLACE ON RAION HACKJAM 2024",
   },
   {
     id: 3,
@@ -32,6 +33,14 @@ export const projectDatas: ProjectItems[] = [
   },
   {
     id: 4,
+    name: "RUPAN",
+    img: "rupan.png",
+    category: "GAME",
+    description:
+      "RUPAN IS A BRACKEYS GAME JAM SUBMISSION THEMED `CALM BEFORE THE STORM`",
+  },
+  {
+    id: 5,
     name: "AWARELY",
     img: "awarely.png",
     category: "WEB",
