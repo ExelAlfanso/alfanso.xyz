@@ -22,10 +22,12 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
           <div
             key={index}
             className={`flex flex-col lg:${
-              index % 2 != 0 ? "flex-row-reverse" : "flex-row"
+              index % 2 != 0
+                ? "flex-row-reverse text-right"
+                : "flex-row text-left"
             } items-center justify-center text-xl lg:text-2xl text-center `}
           >
-            <div className="flex flex-row lg:block font-heading lg:text-3xl xl:text-5xl">
+            <div className="flex flex-row lg:block font-heading lg:text-4xl xl:text-5xl">
               <span className="font-bold mx-2">{item.labelOne}</span>
               <span className="font-accent">{item.labelAccent}</span>
               <span className="font-bold mx-2 ">{item.labelTwo}</span>
