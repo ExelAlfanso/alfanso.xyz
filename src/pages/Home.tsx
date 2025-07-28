@@ -1,4 +1,4 @@
-import Dither from "./Components/Dither";
+// import Dither from "./Background/Dither";
 import Hero from "./Components/Sections/Hero";
 import About from "./Components/Sections/About";
 import TechStack from "./Components/Sections/TechStack";
@@ -6,22 +6,28 @@ import Experiences from "./Components/Sections/Experiences";
 import Projects from "./Components/Sections/Projects";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import Dither from "./Background/Dither";
+import Aurora from "./Background/Aurora";
+// import LetterGlitch from "./Background/LetterGlitch.tsx";
+// import Aurora from "./Background/Aurora";
 
 export const Home = () => {
   return (
-    <div className="min-h-screen relative">
-      <Dither
-        waveColor={[0.6, 0.3, 0.3]}
-        disableAnimation={false}
-        enableMouseInteraction={false}
-        mouseRadius={0.3}
-        colorNum={4}
-        waveAmplitude={0.35}
-        waveFrequency={3}
-        waveSpeed={0.05}
-      />
+    <div className="min-h-screen relative ">
+      <div className="absolute inset-0 -z-10 w-full h-auto overflow-hidden">
+        <Dither
+          waveColor={[0.6, 0.3, 0.3]}
+          disableAnimation={false}
+          enableMouseInteraction={false}
+          mouseRadius={0.3}
+          colorNum={4}
+          waveAmplitude={0.35}
+          waveFrequency={3}
+          waveSpeed={0.05}
+        />
+      </div>
       <Navbar />
-      <Hero id="Hero" />
+      <Hero id="Hero" className="z-10" />
       <About id="About" />
       <Experiences id="Experiences" />
       <TechStack id="TechStack" />
