@@ -22,30 +22,32 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
         EXPERIENCES
       </Header>
       <Text>
-        {experiencesDatas.map((item, index) => (
-          <motion.div
-            variants={
-              index % 2 == 0 ? slideInLeftAnimation : slideInRightAnimation
-            }
-            initial="initial"
-            whileInView="animate"
-            key={index}
-            className={`flex flex-col lg:${
-              index % 2 == 0
-                ? "flex-row-reverse text-right"
-                : "flex-row text-left"
-            } items-center justify-center text-xl lg:text-2xl text-center mb-15 `}
-          >
-            <div className="flex flex-col items-center justify-center lg:block font-heading lg:text-4xl xl:text-5xl w-150">
-              <span className="font-bold mx-2">{item.labelOne}</span>
-              <span className="font-accent">{item.labelAccent}</span>
-              <span className="font-bold mx-2 ">{item.labelTwo}</span>
-            </div>
-            <div className=" font-bold mx-2 lg:text-3xl xl:text-8xl mb-6 lg:mb-12 font-heading">
-              {item.year}
-            </div>
-          </motion.div>
-        ))}
+        {experiencesDatas.map((item, index) => {
+          const layoutClass =
+            index % 2 === 0
+              ? "lg:flex-row-reverse text-right"
+              : "lg:flex-row text-left";
+          return (
+            <motion.div
+              variants={
+                index % 2 == 0 ? slideInLeftAnimation : slideInRightAnimation
+              }
+              initial="initial"
+              whileInView="animate"
+              key={index}
+              className={`flex flex-col lg:${layoutClass} items-center justify-center text-xl lg:text-2xl text-center mb-15 `}
+            >
+              <div className="flex flex-col items-center justify-center lg:block font-heading lg:text-4xl xl:text-5xl w-150">
+                <span className="font-bold mx-2">{item.labelOne}</span>
+                <span className="font-accent">{item.labelAccent}</span>
+                <span className="font-bold mx-2 ">{item.labelTwo}</span>
+              </div>
+              <div className=" font-bold mx-2 lg:text-3xl xl:text-8xl mb-6 lg:mb-12 font-heading">
+                {item.year}
+              </div>
+            </motion.div>
+          );
+        })}
       </Text>
     </section>
   );
