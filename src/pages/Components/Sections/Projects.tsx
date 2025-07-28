@@ -21,7 +21,7 @@ const Projects: React.FC<ProjectsProps> = ({ id, className }) => {
       initial="initial"
       whileInView="animate"
       id={id}
-      className={`mb-10 overflow-hidden ${className}`}
+      className={`mb-10 overflow-hidden ${className} overflow-hidden`}
     >
       <Header className="font-bold mb-10" size="subtitle">
         PROJECTS
