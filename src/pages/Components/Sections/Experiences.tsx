@@ -24,9 +24,9 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
       <Text>
         {experiencesDatas.map((item, index) => {
           const layoutClass =
-            index % 2 === 0
-              ? "lg:flex-row-reverse text-right"
-              : "lg:flex-row text-left";
+            index % 2 == 0
+              ? "lg:flex-row-reverse lg:text-right"
+              : "lg:flex-row lg:text-left";
           return (
             <motion.div
               variants={
@@ -35,7 +35,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
               initial="initial"
               whileInView="animate"
               key={index}
-              className={`flex flex-col lg:${layoutClass} items-center justify-center text-xl lg:text-2xl text-center mb-15 `}
+              className={`flex flex-col ${layoutClass} items-center justify-center text-xl lg:text-2xl text-center mb-15 `}
             >
               <div className="flex flex-col items-center justify-center lg:block font-heading lg:text-4xl xl:text-5xl w-150">
                 <span className="font-bold mx-2">{item.labelOne}</span>
