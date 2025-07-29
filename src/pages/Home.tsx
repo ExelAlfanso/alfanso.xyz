@@ -12,13 +12,12 @@ export const Home = () => {
     <div className="min-h-screen relative ">
       <div className="absolute inset-0 -z-10 w-full h-auto overflow-hidden">
         <Dither
-          waveColor={[0.6, 0.3, 0.3]}
+          waveColor={[0.9, 0.3, 0.3]}
           disableAnimation={false}
-          enableMouseInteraction={false}
           mouseRadius={0.3}
           colorNum={4}
-          waveAmplitude={0.35}
-          waveFrequency={3}
+          waveAmplitude={0.2}
+          waveFrequency={5}
           waveSpeed={0.05}
         />
       </div>
