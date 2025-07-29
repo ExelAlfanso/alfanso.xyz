@@ -1,8 +1,6 @@
 import React from "react";
 import Header from "../Typography/Header.tsx";
 import Text from "../Typography/Text.tsx";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard } from "swiper/modules";
 import "../../../../node_modules/swiper/swiper.css";
 import { motion } from "framer-motion";
 import { fadeInAnimation } from "../../../Constants/animationVariants.ts";
@@ -21,44 +19,34 @@ const Projects: React.FC<ProjectsProps> = ({ id, className }) => {
       initial="initial"
       whileInView="animate"
       id={id}
-      className={`mb-10 overflow-hidden ${className} overflow-hidden`}
+      className={`mb-10 overflow-hidden ${className} flex flex-col items-center justify-center`}
     >
       <Header className="font-bold mb-10" size="subtitle">
         PROJECTS
       </Header>
-      <Swiper
-        modules={[Keyboard]}
-        keyboard={{ enabled: true }}
-        spaceBetween={10}
-        slidesPerView={2}
-        slidesPerGroup={1}
-        centeredSlides={true}
-      >
+      <div className="flex flex-col lg:grid lg:grid-cols-3 lg:gap-5 items-center justify-center mx-auto">
         {projectDatas.map((item) => (
-          <SwiperSlide
-            key={item.id}
-            className="swiper-slide opacity-40 [&.swiper-slide-active]:opacity-100 transition-opacity duration-300"
-          >
-            {
-              <div className="flex flex-col items-center justify-center">
-                <Header
-                  size="description"
-                  className="text-2xl lg:text-4xl font-bold font-heading"
-                >
-                  {item.name}
-                </Header>
-                <Header size="description" className="font-accent mb-5">
-                  {`<--<- ${item.category} >->-->`}
-                </Header>
-                <img src={item.img} className="w-80 rounded-3xl mb-3" />
-                <Text className="text-center font-p lg:text-3xl lg:w-100">
-                  {item.description}
-                </Text>
-              </div>
-            }
-          </SwiperSlide>
+          <div className="flex flex-col items-center justify-center mb-10 lg:mb-0">
+            <Header
+              size="description"
+              className="text-2xl lg:text-4xl font-bold font-heading"
+            >
+              {item.name}
+            </Header>
+            <Header size="description" className="font-accent mb-5">
+              {`<--<- ${item.category} >->-->`}
+            </Header>
+            <img
+              src={item.img}
+              className="max-w-80 xl:max-w-100 rounded-3xl mb-3"
+            />
+
+            <Text className="text-center font-p max-w-100 px-15">
+              {item.description}
+            </Text>
+          </div>
         ))}
-      </Swiper>
+      </div>
     </motion.section>
   );
 };

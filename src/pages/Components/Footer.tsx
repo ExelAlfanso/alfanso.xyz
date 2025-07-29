@@ -13,17 +13,19 @@ const Footer: React.FC<FooterProps> = ({ id, className }) => {
   return (
     <div
       id={id}
-      className={`flex flex-row items-center justify-center px-10 gap-10 lg:gap-200 bg-secondary w-full h-80 overflow-hidden ${className} `}
+      className={`flex flex-row items-center justify-between px-10 lg:px-50 gap-10 bg-secondary w-full h-80 overflow-hidden ${className} `}
     >
-      <div>
-        <div className="flex flex-row gap-5 font-accent mb-5 ">
-          <Copyright className="text-accent w-5" />
-          <Text>2025 alfanso.xyz</Text>
+      <div className="flex flex-col items-left">
+        <div className="flex flex-row items-left gap-5 font-accent mb-5 ">
+          <Copyright className="text-accent w-3 lg:w-5 my-2" />
+          <Text className="text-xs sm:text-base">2025 alfanso.xyz</Text>
         </div>
-        <Text className="font-accent">
+        <Text className="font-accent text-xs sm:text-base">
           Exel Boy Alfanso - Full Stack Developer
         </Text>
-        <Text className="font-p">exel.alfanso@gmail.com</Text>
+        <Text className="font-p text-xs sm:text-base">
+          exel.alfanso@gmail.com
+        </Text>
       </div>
       <div className="gap-5 grid grid-cols-2">
         {footerDatas.map((data) => (
@@ -31,7 +33,7 @@ const Footer: React.FC<FooterProps> = ({ id, className }) => {
             key={data.id}
             to={data.href}
             target="_blank"
-            className="hover:text-white text-accent gap-2 flex flex-row font-heading"
+            className="hover:text-white text-accent gap-2 flex flex-row font-heading text-xs sm:text-base"
           >
             <p>0{data.id}</p>
             <p>{data.label}</p>
