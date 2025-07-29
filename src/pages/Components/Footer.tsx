@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({ id, className }) => {
           <Text className="text-xs sm:text-base">2025 alfanso.xyz</Text>
         </div>
         <Text className="font-accent text-xs sm:text-base">
-          Exel Boy Alfanso - Full Stack Developer
+          Exel Boy Alfanso - Software Developer
         </Text>
         <Text className="font-p text-xs sm:text-base">
           exel.alfanso@gmail.com
