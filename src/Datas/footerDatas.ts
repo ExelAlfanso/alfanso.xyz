@@ -9,7 +9,7 @@ export const footerDatas: FooterData[] = [
   {
     id: 1,
     label: "twitter",
-    href: "https://twitter.com/alfanso_",
+    href: "https://twitter.com/exelcoeg",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const footerDatas: FooterData[] = [
   {
     id: 3,
     label: "github",
-    href: "https://github.com/ExelCoeg",
+    href: "https://github.com/ExelAlfanso",
   },
   {
     id: 4,
