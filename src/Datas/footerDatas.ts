@@ -26,4 +26,9 @@ export const footerDatas: FooterData[] = [
     label: "instagram",
     href: "https://www.instagram.com/exel.alfanso",
   },
+  {
+    id: 5,
+    label: "itch.io",
+    href: "https://exelcoeg.itch.io/",
+  },
 ];
