@@ -7,6 +7,7 @@
   --color-tertiary: #7c3626;
   --color-accent: #ffcdbc;
   --color-accent-two: #f5853f;
+  --breakpoint-sm: 30rem;
 }
 
 .font-heading,
