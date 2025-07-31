@@ -41,6 +41,14 @@ export const projectDatas: ProjectItems[] = [
   },
   {
     id: 5,
+    name: "TOO MANY TASKS",
+    img: "tmt.jpg",
+    category: "GAME",
+    description:
+      "TOO MANY TASKS IS A MULTI-TASKING GAME, WE OPERATED MULTIPLE PARTS OF A JOB ALL AT ONCE, THIS GAME IS CURRENTLY IN PROGRESS FOR THE GAMESEED 2024 GAMEJAM",
+  },
+  {
+    id: 6,
     name: "AWARELY",
     img: "awarely.png",
     category: "WEB",
