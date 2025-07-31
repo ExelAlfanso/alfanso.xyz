@@ -17,5 +17,5 @@ export const profileItems: ProfileItem[] = [
     label: "UNIVERSITAS - UNIVERSITY-- ",
     subLabel: "BRAWIJAYA UNIVERSITY",
   },
-  { id: 3, label: "PERAN - ROLE -- ", subLabel: "JUNIOR WEB DEVELOPER" },
+  { id: 3, label: "PERAN - ROLE -- ", subLabel: "JUNIOR SOFTWARE DEVELOPER" },
 ];
