@@ -11,7 +11,7 @@ const Hero: React.FC<HeroProps> = ({ id, className }) => {
   return (
     <section
       id={id}
-      className={`lg:gap-20 pt-50 flex flex-col lg:flex-row items-center justify-center w-full z-10 mb-60 lg:mb-100 ${className} overflow-hidden `}
+      className={`lg:gap-20 pt-50 flex flex-col lg:flex-row items-center justify-center w-full z-10 mb-60   lg:mb-100 ${className} overflow-hidden `}
     >
       <div className="flex flex-col items-left justify-center">
         <Header
