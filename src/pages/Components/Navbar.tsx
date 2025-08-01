@@ -42,7 +42,7 @@ const Navbar = () => {
               navItem.bg
             } ${isOpen ? navItem.translate : "translate-x-full"}`}
           >
-            <h1 className="-rotate-90 origin-top-left z-10 absolute top-180 text-[3rem] font-accent">
+            <h1 className="-rotate-90 origin-top-left z-10 absolute top-180 text-[2rem] lg:text-[3rem] font-accent">
               {`<<<<<<${navItem.label.toUpperCase()}>>>>>>`}
             </h1>
           </button>
