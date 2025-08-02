@@ -50,7 +50,6 @@ const Navbar = () => {
       })}
       <button onClick={handleClick}>
         <BurgerMenu className="hover:scale-130  cursor-pointer transition-all"></BurgerMenu>
-        {/* <Menu className="text-accent cursor-pointer"></Menu> */}
       </button>
     </nav>
   );
