@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { fadeInAnimation } from "../../../Constants/animationVariants.ts";
 
 import { projectDatas } from "../../../Datas/projectDatas.ts";
+import { Link } from "react-router-dom";
 
 interface ProjectsProps {
   id: string;
@@ -36,10 +37,12 @@ const Projects: React.FC<ProjectsProps> = ({ id, className }) => {
             <Header size="description" className="font-accent mb-5">
               {`<--<- ${item.category} >->-->`}
             </Header>
-            <img
-              src={item.img}
-              className="max-w-80 xl:max-w-100 rounded-3xl mb-3"
-            />
+            <Link to={item.href} target="_blank">
+              <img
+                src={item.img}
+                className="max-w-80 xl:max-w-100 rounded-3xl mb-3"
+              />
+            </Link>
 
             <Text className="text-center font-p max-w-100 px-15">
               {item.description}
