@@ -23,11 +23,15 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
         TECH STACK
       </Header>
       <div className="flex items-center justify-center py-10 bg-primary/50">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 py-5 px-5 ">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 py-5 px-5 ">
           {techStackDatas.map((item) => (
             <div key={item.id}>
               <span className="flex flex-row items-center justify-center rounded-2xl bg-secondary px-6 py-4 ">
-                <img className="w-8 lg:w-12 mr-5" src={item.icon} alt="" />
+                <img
+                  className="max-h-8 w-auto lg:max-h-12 mr-5"
+                  src={item.icon}
+                  alt=""
+                />
                 <Text className="text-xl lg:text-[8px] xl:text-[20px]">
                   {item.label}
                 </Text>

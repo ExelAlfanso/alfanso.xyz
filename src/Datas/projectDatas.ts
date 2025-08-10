@@ -55,4 +55,12 @@ export const projectDatas: ProjectItems[] = [
     description:
       "AWARELY IS A WEBSITE THAT FOCUSES ON COUNSELING, REPORT, AND SOCIAL JUSTICE UPON COLLEGE STUDENTS IN FILKOM UB. I USED REACT & NODEJS (EXPRESS) FOR THIS WEB !",
   },
+  {
+    id: 7,
+    name: "CHATIFY",
+    img: "chatify.png",
+    category: "WEB",
+    description:
+      "SIMPLE CHAT ROOM WEB USING MERN, NEXTJS, AND SOCKET.IO, LEARNT ALOT FROM THIS PROJECT!",
+  },
 ];
