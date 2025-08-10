@@ -10,4 +10,6 @@ export const techStackDatas: TechStackItem[] = [
   { id: 4, icon: "/unity.png", label: "UNITY" },
   { id: 5, icon: "/typescript.png", label: "TYPESCRIPT" },
   { id: 6, icon: "/csharp.png", label: "CSHARP" },
+  { id: 7, icon: "/nextjs.png", label: "NEXTJS" },
+  { id: 8, icon: "/mongodb.png", label: "MONGODB" },
 ];
