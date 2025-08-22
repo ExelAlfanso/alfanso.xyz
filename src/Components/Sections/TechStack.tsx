@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../Typography/Header";
 import Text from "../Typography/Text";
-import { techStackDatas } from "../../../Datas/techStackDatas";
+import { techStackDatas } from "../../Datas/techStackDatas";
 import { motion } from "framer-motion";
-import { fadeInAnimation } from "../../../Constants/animationVariants";
+import { fadeInAnimation } from "../../Constants/animationVariants";
 
 interface TechStackProps {
   id: string;

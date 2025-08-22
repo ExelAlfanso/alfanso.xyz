@@ -1,4 +1,4 @@
-import { profileItems } from "../../Datas/profileCardData.ts";
+import { profileItems } from "../Datas/profileCardData.ts";
 import Text from "./Typography/Text.tsx";
 
 const PassportCard = () => {

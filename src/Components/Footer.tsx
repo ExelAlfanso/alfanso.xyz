@@ -1,7 +1,7 @@
 import React from "react";
 import { Copyright } from "lucide-react";
 import Text from "./Typography/Text";
-import { footerDatas } from "../../Datas/footerDatas";
+import { footerDatas } from "../Datas/footerDatas";
 import { Link } from "react-router-dom";
 
 interface FooterProps {

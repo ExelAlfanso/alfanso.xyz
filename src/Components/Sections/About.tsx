@@ -29,7 +29,7 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
       viewport={{ once: true }}
       id={id}
       className={`
-        font-accent mx-15 mb-60 ${className}`}
+        font-accent mx-15 my-60 ${className}`}
     >
       <Header
         className="lg:text-6xl xl:text-8xl font-bold mb-10"
