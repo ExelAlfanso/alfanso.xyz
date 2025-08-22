@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "../Typography/Header.tsx";
 import Text from "../Typography/Text.tsx";
-import "../../../../node_modules/swiper/swiper.css";
+import "../../../node_modules/swiper/swiper.css";
 import { motion } from "framer-motion";
-import { fadeInAnimation } from "../../../Constants/animationVariants.ts";
+import { fadeInAnimation } from "../../Constants/animationVariants.ts";
 
-import { projectDatas } from "../../../Datas/projectDatas.ts";
+import { projectDatas } from "../../Datas/projectDatas.ts";
 import { Link } from "react-router-dom";
 
 interface ProjectsProps {

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { navigationItems } from "../../Datas/navbarDatas";
+import { navigationItems } from "../Datas/navbarDatas";
 import BurgerMenu from "./Icons/BurgerMenu";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

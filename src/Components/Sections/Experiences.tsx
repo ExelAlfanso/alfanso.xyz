@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../Typography/Header";
 import Text from "../Typography/Text";
-import { experiencesDatas } from "../../../Datas/experiencesDatas";
+import { experiencesDatas } from "../../Datas/experiencesDatas";
 import { motion } from "framer-motion";
 import {
   slideInRightAnimation,
   slideInLeftAnimation,
-} from "../../../Constants/animationVariants";
+} from "../../Constants/animationVariants";
 interface ExperiencesProps {
   id: string;
   className?: string;
