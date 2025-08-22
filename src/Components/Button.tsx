@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={handleClick}
-      className={`lg:text-3xl xl:text-5xl xl:border-2 z-10 ${className} text-accent hover:text-white cursor-pointer rounded-full font-bold border-1 border-accent hover:border-white bg-transparent px-5 lg:px-7 py-1 lg:py-3`}
+      className={`lg:text-3xl xl:text-5xl xl:border-2 z-10 ${className} text-accent hover:text-white transition-colors cursor-pointer rounded-full font-bold border-1 border-accent hover:border-white bg-transparent px-5 lg:px-7 py-1 lg:py-3`}
     >
       <h1>{children}</h1>
     </button>

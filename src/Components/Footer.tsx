@@ -35,7 +35,7 @@ const Footer: React.FC<FooterProps> = ({ id, className }) => {
             key={data.id}
             to={data.href}
             target="_blank"
-            className="hover:text-white text-accent gap-2 flex flex-row font-heading text-xs sm:text-base"
+            className="hover:text-white transition-colors text-accent gap-2 flex flex-row font-heading text-xs sm:text-base"
           >
             <p>0{data.id}</p>
             <p>{data.label}</p>

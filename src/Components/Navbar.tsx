@@ -38,7 +38,7 @@ const Navbar = () => {
           <button
             onClick={() => handleNavClick(navItem.href)}
             key={index}
-            className={`cursor-pointer fixed right-0 top-0 h-full w-80 hover:scale-110 text-accent hover:text-accent-two transition-transform duration-500 ${
+            className={`cursor-pointer fixed right-0 top-0 h-full w-80 hover:scale-110 text-accent hover:text-accent-two transition-all duration-500 ${
               navItem.bg
             } ${isOpen ? navItem.translate : "translate-x-full"}`}
           >
