@@ -37,9 +37,9 @@ export const experiencesDatas: ExperiencesItems[] = [
   },
   {
     id: 4,
-    labelOne: "AWARDEE OF",
+    labelOne: "AWARDEE",
     labelAccent: "BAKTI BCA",
-    labelTwo: "SCHOLARSHIP 2024",
-    year: "2024-2025",
+    labelTwo: "SCHOLARSHIP",
+    year: "2025",
   },
 ];
