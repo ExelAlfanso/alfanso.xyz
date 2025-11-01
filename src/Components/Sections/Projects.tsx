@@ -51,7 +51,7 @@ const Projects: React.FC<ProjectsProps> = ({ id, className }) => {
             <Text className="text-center font-p max-w-100 px-15 mt-2">
               {item.description.toUpperCase()}
             </Text>
-            <div className="grid grid-cols-2 lg:flex lg:flex-row items-center justify-center gap-2 mt-3">
+            <div className="grid grid-cols-2 items-center justify-center gap-2 mt-3">
               {item.categories.map((cat, index) => (
                 <Chip
                   key={index}
