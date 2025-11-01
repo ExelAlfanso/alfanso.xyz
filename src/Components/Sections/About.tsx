@@ -43,7 +43,7 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
             className="font-accent lg:text-left lg:text-5xl xl:text-6xl"
             size="description"
           >
-            hELLO i’M eXEL,
+            Hello, I'm Exel Boy Alfanso!
           </Header>
           I'm a Full Stack Developer experienced in
           <span className="font-bold mx-2">WEB, APP, AND GAME DEVELOPMENT</span>
