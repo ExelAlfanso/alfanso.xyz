@@ -29,7 +29,7 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
       viewport={{ once: true }}
       id={id}
       className={`
-        font-accent mx-15 my-60 ${className}`}
+        font-accent mx-15 my-60 text-center ${className}`}
     >
       <Header
         className="lg:text-6xl xl:text-8xl font-bold mb-10"
@@ -38,11 +38,8 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
         ABOUT
       </Header>
       <div className="flex flex-col items-center justify-center ">
-        <Text className="lg:text-left text-center lg:text-[24px] xl:text-[36px] lg:w-120 xl:w-180">
-          <Header
-            className="font-accent lg:text-left lg:text-5xl xl:text-6xl"
-            size="description"
-          >
+        <Text className=" lg:text-[24px] xl:text-[36px] lg:w-120 xl:w-180">
+          <Header className="font-accent text-5xl" size="description">
             Hello, I'm Exel Boy Alfanso!
           </Header>
           I'm a Full Stack Developer experienced in
