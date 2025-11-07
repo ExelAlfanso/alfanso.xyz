@@ -32,7 +32,7 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
                   src={item.icon}
                   alt=""
                 />
-                <Text className="text-xl">{item.label}</Text>
+                <Text className="text-[13px] lg:text-xl">{item.label}</Text>
               </span>
             </div>
           ))}
