@@ -37,7 +37,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
               key={index}
               className={`flex flex-col ${layoutClass} items-center justify-center text-xl lg:text-2xl text-center mb-15 `}
             >
-              <div className="flex flex-col items-center justify-center lg:block font-heading lg:text-2xl xl:text-5xl w-150">
+              <div className="flex flex-col items-center justify-center lg:block font-heading lg:text-2xl xl:text-5xl w-80 lg:w-150">
                 <span className="font-bold mx-2">{item.labelOne}</span>
                 <span className="font-accent">{item.labelAccent}</span>
                 <span className="font-bold mx-2 ">{item.labelTwo}</span>
