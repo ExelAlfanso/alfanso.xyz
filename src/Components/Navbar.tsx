@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { navigationItems } from "../Datas/navbarDatas";
 import BurgerMenu from "./Icons/BurgerMenu";
+import { useScrollSpy } from "../Hooks/useScrollSpy";
 const Navbar = () => {
+  const activeSection = useScrollSpy(
+    navigationItems.map((item) => item.href),
+    300
+  );
+
   const [isOpen, setIsOpen] = useState(false);
   const sideBarRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -32,25 +38,47 @@ const Navbar = () => {
     setIsOpen(false);
   }
   return (
-    <nav ref={sideBarRef} className="w-full flex justify-end p-5 absolute z-10">
-      {navigationItems.map((navItem, index) => {
-        return (
-          <button
-            onClick={() => handleNavClick(navItem.href)}
-            key={index}
-            className={`cursor-pointer fixed right-0 top-0 h-full w-80 hover:scale-110 text-accent hover:text-accent-two transition-all duration-500 ${
-              navItem.bg
-            } ${isOpen ? navItem.translate : "translate-x-full"}`}
-          >
-            <h1 className="-rotate-90 origin-top-left z-10 absolute top-180 text-[2rem] lg:text-[3rem] font-accent">
-              {`<<<<<<${navItem.label.toUpperCase()}>>>>>>`}
-            </h1>
-          </button>
-        );
-      })}
-      <button onClick={handleClick}>
-        <BurgerMenu className="hover:scale-130  cursor-pointer transition-all"></BurgerMenu>
-      </button>
+    <nav className="w-full flex flex-col items-center justify-center mt-10">
+      <div className="md:w-3/4 hidden md:flex justify-center items-center fixed z-10 mt-30 py-5 font-heading xs:text-[10px] xl:text-[32px] rounded-full gap-10 bg-primary">
+        {navigationItems.map((navItem, index) => {
+          return (
+            <button
+              onClick={() => handleNavClick(navItem.href)}
+              key={index}
+              className={`cursor-pointer top-0 hover:scale-110 text-accent hover:text-accent-two transition-all duration-500 ${
+                activeSection === navItem.href
+                  ? "text-accent-two"
+                  : "text-accent"
+              } `}
+            >
+              {navItem.label}
+            </button>
+          );
+        })}
+      </div>
+      <div
+        ref={sideBarRef}
+        className="w-full flex justify-end p-5 absolute z-10 md:hidden"
+      >
+        {navigationItems.map((navItem, index) => {
+          return (
+            <button
+              onClick={() => handleNavClick(navItem.href)}
+              key={index}
+              className={`cursor-pointer fixed right-0 top-0 h-full w-80 hover:scale-110 text-accent hover:text-accent-two transition-all duration-500 ${
+                navItem.bg
+              } ${isOpen ? navItem.translate : "translate-x-full"}`}
+            >
+              <h1 className="-rotate-90 origin-top-left z-10 absolute top-180 text-[2rem] lg:text-[3rem] font-accent">
+                {`<<<<<<${navItem.label.toUpperCase()}>>>>>>`}
+              </h1>
+            </button>
+          );
+        })}
+        <button onClick={handleClick}>
+          <BurgerMenu className="hover:scale-130  cursor-pointer transition-all"></BurgerMenu>
+        </button>
+      </div>
     </nav>
   );
 };
