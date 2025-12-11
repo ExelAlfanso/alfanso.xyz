@@ -97,6 +97,6 @@ export const projectDatas: ProjectItems[] = [
     description:
       "RENSA IS A WEB APPLICATION THAT ALLOWS USERS TO SHARE PHOTOS WITH THEIR SETTINGS AND CONNECT WITH OTHERS",
     href: "https://triv-quiz-app.vercel.app/",
-    categories: ["React.JS"],
+    categories: ["React.JS", "MongoDB", "Next.JS", "Express.JS", "Cloudinary"],
   },
 ];
