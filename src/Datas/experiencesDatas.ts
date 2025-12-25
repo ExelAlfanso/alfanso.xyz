@@ -1,38 +1,19 @@
 export type ExperiencesItems = {
-  id: number;
-  labelOne: string;
-  labelAccent: string;
-  labelTwo: string;
+  label: string;
   year: string;
 };
 
 export const experiencesDatas: ExperiencesItems[] = [
   {
-    id: 1,
-    labelOne: "COLEAD OF",
-    labelAccent: "GAME PROGRAMMING PROFESSION",
-    labelTwo: "IN RAION COMMUNITY",
-    year: "2024 - PRESENT",
+    label: "Co-lead of Game Programming Profession in Raion Community 2025",
+    year: "2024 - 2025",
   },
   {
-    id: 2,
-    labelOne: "TOP 10 FINALIST OF",
-    labelAccent: "GAMESEED 2025",
-    labelTwo: "INDONESIA",
-    year: "2025",
-  },
-  {
-    id: 3,
-    labelOne: "IGDX BOOTCAMP 2024",
-    labelAccent: "MENTEE",
-    labelTwo: "",
+    label: "IGDX Bootcamp 2024 Mentee",
     year: "2024",
   },
   {
-    id: 4,
-    labelOne: "AWARDEE",
-    labelAccent: "BAKTI BCA",
-    labelTwo: "SCHOLARSHIP",
+    label: "Bakti BCA 2025 Scholarship Awardee",
     year: "2025",
   },
 ];

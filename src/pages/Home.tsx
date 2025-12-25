@@ -21,7 +21,6 @@ export const Home = () => {
           waveSpeed={0.05}
         />
       </div>
-      <Navbar />
       <Hero id="Hero" className="z-10" />
       <About id="About" />
       <Experiences id="Experiences" />

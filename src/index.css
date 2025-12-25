@@ -14,13 +14,15 @@
 h1,
 h2,
 h3 {
-  font-family: "Space Grotesk";
+  font-family: "Playfair Display";
 }
 
 .font-accent {
   font-family: "Playfair Display";
 }
-
+.font-mono {
+  font-family: "Space Grotesk";
+}
 .font-p {
   font-family: "Work Sans";
 }

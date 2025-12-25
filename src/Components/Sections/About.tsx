@@ -29,25 +29,46 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
       viewport={{ once: true }}
       id={id}
       className={`
-        font-accent mx-15 my-60 text-center ${className}`}
+        font-accent xl:mx-40 mb-30 text-center ${className}`}
     >
-      <Header
-        className="lg:text-6xl xl:text-8xl font-bold mb-10"
-        size="subtitle"
-      >
-        ABOUT
+      <Header className="font-bold lg:text-6xl xl:text-8xl" size="subtitle">
+        About
       </Header>
-      <div className="flex flex-col items-center justify-center ">
-        <Text className=" lg:text-[24px] xl:text-[36px] lg:w-120 xl:w-180">
-          <Header className="font-accent text-5xl" size="description">
-            Hello, I'm Exel Boy Alfanso!
-          </Header>
-          I'm a Full Stack Developer experienced in
-          <span className="font-bold mx-2">WEB, APP, AND GAME DEVELOPMENT</span>
-          for 3 years. Current exploring the world of
-          <span className=" font-bold mx-2">WEB DEVELOPMENT</span>
-          and i'm open to collaborations that blend design and code.
-        </Text>
+      <div className="relative flex flex-col items-center justify-center w-full gap-30 md:gap-15 lg:flex-row lg:justify-between h-200 xl:px-20">
+        <div className="relative w-100 xl:w-150 md:w-150 ">
+          <img
+            src="/me1.png"
+            alt="Me"
+            loading="lazy"
+            className="max-w-1/2 md:max-w-2/3 lg:max-w-3/4"
+          />
+          <img
+            src="/me3.png"
+            alt="Me"
+            className="absolute right-5 -bottom-10 max-w-1/2 md:max-w-2/3 lg:max-w-3/4"
+            loading="lazy"
+          />
+          <div className="text-left lg:w-1/2">
+            <Text className="text-[16px] font-bold xl:text-[30px] ">
+              Exel Boy Alfanso,
+            </Text>
+            <Text className="text-[12px] xl:text-[16px] font-light w-1/3 lg:w-2/3 xl:w-2/3">
+              He is a third-year Computer Science student at University of
+              Brawijaya
+            </Text>
+          </div>
+        </div>
+        <div className="relative flex items-center justify-center w-80 lg:w-100 xl:w-110">
+          <img src="/me2.png" alt="Me" loading="lazy" />
+          <div className="absolute bottom-0 flex flex-col -left-10 xl:-left-40">
+            <Text className="text-[24px] xl:text-[36px] text-left font-bold">
+              FULL STACK DEVELOPER
+            </Text>
+            <Text className="text-[24px] xl:text-[36px] text-left font-bold">
+              GAME DEVELOPER
+            </Text>
+          </div>
+        </div>
       </div>
     </motion.section>
   );

@@ -7,7 +7,9 @@ interface TextProps {
 
 const Text: React.FC<TextProps> = ({ children, className }) => {
   return (
-    <div className={`text-accent text-base ${className}`}>{children} </div>
+    <div className={`text-accent text-base font-mono ${className}`}>
+      {children}{" "}
+    </div>
   );
 };
 

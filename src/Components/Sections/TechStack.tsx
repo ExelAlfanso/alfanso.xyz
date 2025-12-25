@@ -19,18 +19,17 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
       id={id}
       className={`mb-75 ${className} overflow-hidden`}
     >
-      <Header className="font-bold mb-10" size="subtitle">
-        TECH STACK
+      <Header className="mb-10 font-bold" size="subtitle">
+        Tech Stack
       </Header>
       <div className="flex items-center justify-center py-10 bg-primary/50">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 py-5 px-5 ">
-          {techStackDatas.map((item) => (
-            <div key={item.id}>
-              <span className="flex flex-row items-center justify-center rounded-2xl bg-secondary px-6 py-4 ">
+        <div className="grid grid-cols-2 gap-10 px-5 py-5 lg:grid-cols-4 ">
+          {techStackDatas.map((item, idx) => (
+            <div key={idx}>
+              <span className="flex flex-row items-center justify-center px-6 py-4 rounded-2xl bg-secondary ">
                 <img
-                  className="max-h-8 w-auto lg:max-h-12 mr-5"
+                  className="w-auto mr-5 max-h-8 lg:max-h-12"
                   src={item.icon}
-                  alt=""
                 />
                 <Text className="text-[13px] lg:text-xl">{item.label}</Text>
               </span>

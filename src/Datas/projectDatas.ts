@@ -1,5 +1,4 @@
 export type ProjectItems = {
-  id: number;
   img: string;
   name: string;
   category: "GAME DEVELOPMENT" | "WEB DEVELOPMENT" | "APP DEVELOPMENT";
@@ -8,19 +7,8 @@ export type ProjectItems = {
   categories: string[];
 };
 
-export const projectDatas: ProjectItems[] = [
+export const collaborativeProjectDatas: ProjectItems[] = [
   {
-    id: 1,
-    name: "RUINS OF ARTHAMERTA",
-    img: "ruins.png",
-    category: "GAME DEVELOPMENT",
-    description:
-      "RUINS OF ARTHAMERTA IS A 2D ACTION ADVENTURE GAME SET IN A FANTASY WORLD INSPIRED BY INDONESIAN MYTHOLOGY.",
-    href: "https://exelcoeg.itch.io/ruins-of-arthamerta",
-    categories: ["Unity", "C#"],
-  },
-  {
-    id: 2,
     name: "CARROTS MY WAY HOME",
     img: "carrots.png",
     category: "GAME DEVELOPMENT",
@@ -30,7 +18,6 @@ export const projectDatas: ProjectItems[] = [
     href: "https://exelcoeg.itch.io/carrots-my-way-home",
   },
   {
-    id: 3,
     name: "GLOOMSHINE DEFENSE",
     img: "gloomshine.png",
     category: "GAME DEVELOPMENT",
@@ -40,7 +27,6 @@ export const projectDatas: ProjectItems[] = [
     categories: ["Unity", "C#"],
   },
   {
-    id: 4,
     name: "RUPAN",
     img: "rupan.png",
     category: "GAME DEVELOPMENT",
@@ -50,7 +36,6 @@ export const projectDatas: ProjectItems[] = [
     categories: ["Unity", "C#"],
   },
   {
-    id: 5,
     name: "TOO MANY TASKS",
     img: "tmt.jpg",
     category: "GAME DEVELOPMENT",
@@ -60,7 +45,17 @@ export const projectDatas: ProjectItems[] = [
     categories: ["Unity", "C#"],
   },
   {
-    id: 6,
+    name: "RUINS OF ARTHAMERTA",
+    img: "ruins.png",
+    category: "GAME DEVELOPMENT",
+    description:
+      "RUINS OF ARTHAMERTA IS A 2D ACTION ADVENTURE GAME SET IN A FANTASY WORLD INSPIRED BY INDONESIAN MYTHOLOGY.",
+    href: "https://exelcoeg.itch.io/ruins-of-arthamerta",
+    categories: ["Unity", "C#"],
+  },
+];
+export const personalProjectDatas: ProjectItems[] = [
+  {
     name: "AWARELY",
     img: "awarely.png",
     category: "WEB DEVELOPMENT",
@@ -70,7 +65,6 @@ export const projectDatas: ProjectItems[] = [
     categories: ["React.JS", "Express.js"],
   },
   {
-    id: 7,
     name: "CHATIFY",
     img: "chatify.png",
     category: "WEB DEVELOPMENT",
@@ -80,7 +74,6 @@ export const projectDatas: ProjectItems[] = [
     categories: ["React.JS", "Next.JS", "MongoDB", "Socket.io"],
   },
   {
-    id: 8,
     name: "TRIVQUIZ",
     img: "trivquiz.png",
     category: "WEB DEVELOPMENT",
@@ -90,7 +83,6 @@ export const projectDatas: ProjectItems[] = [
     categories: ["React.JS", "UI/UX"],
   },
   {
-    id: 9,
     name: "RENSA",
     img: "rensa.png",
     category: "WEB DEVELOPMENT",
