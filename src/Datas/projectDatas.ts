@@ -9,85 +9,85 @@ export type ProjectItems = {
 
 export const collaborativeProjectDatas: ProjectItems[] = [
   {
-    name: "CARROTS MY WAY HOME",
+    name: "Carrots My Way Home",
     img: "carrots.png",
     category: "GAME DEVELOPMENT",
     description:
-      "Carrots My Way Home IS A GAME ABOUT A RABBIT THAT WANTS TO GO HOME BY COLLECTING CARROTS ALONG THE WAY.",
+      "Carrots My Way Home is a game about a rabbit that wants to go home by collecting carrots along the way.",
     categories: ["Unity", "C#"],
     href: "https://exelcoeg.itch.io/carrots-my-way-home",
   },
   {
-    name: "GLOOMSHINE DEFENSE",
+    name: "Gloomshine Defense",
     img: "gloomshine.png",
     category: "GAME DEVELOPMENT",
     description:
-      "GLOOMSHINE DEFENSE IS A TOWER DEFENSE GAME SET IN A FANTASY WORLD FULL OF MYSTERIOUS CREATURES AND CHALLENGING LEVELS. Project for IGDX Bootcamp 2023",
+      "Gloomshine Defense is a tower defense game set in a fantasy world full of mysterious creatures and challenging levels. Project for IGDX Bootcamp 2023.",
     href: "https://ohm195.itch.io/gloomshine-defense",
     categories: ["Unity", "C#"],
   },
   {
-    name: "RUPAN",
+    name: "Rupan",
     img: "rupan.png",
     category: "GAME DEVELOPMENT",
     description:
-      "RUPAN IS A BRACKEYS GAME JAM SUBMISSION THEMED `CALM BEFORE THE STORM`",
+      "Rupan is a Brackeys Game Jam submission themed 'Calm Before the Storm'.",
     href: "https://exelcoeg.itch.io/rupan",
     categories: ["Unity", "C#"],
   },
   {
-    name: "TOO MANY TASKS",
+    name: "Too Many Tasks",
     img: "tmt.jpg",
     category: "GAME DEVELOPMENT",
     description:
-      "TOO MANY TASKS IS A MULTI-TASKING GAME, WE OPERATED MULTIPLE PARTS OF A JOB ALL AT ONCE, THIS GAME IS CURRENTLY IN PROGRESS FOR THE GAMESEED 2024 GAMEJAM",
+      "Too Many Tasks is a multi-tasking game where we operate multiple parts of a job all at once. This game is currently in progress for the GameSeed 2024 GameJam.",
     href: "https://nanta-adji.itch.io/110-raionexe-student-too-many-tasks",
     categories: ["Unity", "C#"],
   },
   {
-    name: "RUINS OF ARTHAMERTA",
+    name: "Ruins of Arthamerta",
     img: "ruins.png",
     category: "GAME DEVELOPMENT",
     description:
-      "RUINS OF ARTHAMERTA IS A 2D ACTION ADVENTURE GAME SET IN A FANTASY WORLD INSPIRED BY INDONESIAN MYTHOLOGY.",
+      "Ruins of Arthamerta is a 2D action adventure game set in a fantasy world inspired by Indonesian mythology.",
     href: "https://exelcoeg.itch.io/ruins-of-arthamerta",
     categories: ["Unity", "C#"],
   },
 ];
 export const personalProjectDatas: ProjectItems[] = [
   {
-    name: "AWARELY",
+    name: "Awarely",
     img: "awarely.png",
     category: "WEB DEVELOPMENT",
     description:
-      "AWARELY IS A WEBSITE THAT FOCUSES ON COUNSELING, REPORT, AND SOCIAL JUSTICE UPON COLLEGE STUDENTS IN FILKOM UB. I USED REACT.JS & NODEJS (EXPRESS) FOR THIS WEB !",
+      "Awarely is a website that focuses on counseling, reporting, and social justice for college students in FILKOM UB. Built with React.js and Node.js (Express).",
     href: "https://awarely-five.vercel.app/",
     categories: ["React.JS", "Express.js"],
   },
   {
-    name: "CHATIFY",
+    name: "Chatify",
     img: "chatify.png",
     category: "WEB DEVELOPMENT",
     description:
-      "CHATIFY IS A REAL-TIME CHAT APPLICATION BUILT WITH REACT.JS FOR THE FRONTEND AND MONGODB FOR THE BACKEND, ALLOWING USERS TO SEND MESSAGES INSTANTLY.",
+      "Chatify is a real-time chat application built with React.js for the frontend and MongoDB for the backend, allowing users to send messages instantly.",
     href: "https://chatify-roan.vercel.app/",
     categories: ["React.JS", "Next.JS", "MongoDB", "Socket.io"],
   },
   {
-    name: "TRIVQUIZ",
+    name: "TrivQuiz",
     img: "trivquiz.png",
     category: "WEB DEVELOPMENT",
     description:
-      "TRIVQUIZ IS A FUN AND INTERACTIVE QUIZ APPLICATION THAT TESTS YOUR KNOWLEDGE ACROSS VARIOUS TOPICS, BUILT USING REACT.JS. THIS IS MY MINI PROJECT FOR DOT Indonesia Internship 2025 Application.",
+      "TrivQuiz is a fun and interactive quiz application that tests your knowledge across various topics, built using React.js. This is my mini project for DOT Indonesia Internship 2025 application.",
     href: "https://triv-quiz-app.vercel.app/",
     categories: ["React.JS", "UI/UX"],
   },
   {
-    name: "RENSA",
+    name: "Rensa",
     img: "rensa.png",
     category: "WEB DEVELOPMENT",
     description:
-      "RENSA IS A WEB APPLICATION THAT ALLOWS USERS TO SHARE PHOTOS WITH THEIR SETTINGS AND CONNECT WITH OTHERS",
+      "Rensa is a web application that allows users to share photos with their settings and connect with others.",
     href: "https://triv-quiz-app.vercel.app/",
     categories: ["React.JS", "MongoDB", "Next.JS", "Express.JS", "Cloudinary"],
   },

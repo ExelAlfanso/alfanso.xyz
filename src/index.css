@@ -35,4 +35,15 @@ h3 {
 
 body {
   margin: 0;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar but keep scrolling */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE & Edge (legacy) */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

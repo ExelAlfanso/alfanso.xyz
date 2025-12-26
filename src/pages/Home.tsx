@@ -6,11 +6,12 @@ import Projects from "../Components/Sections/Projects";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Dither from "../Components/Background/Dither";
+import Contact from "../Components/Sections/Contact";
 
 export const Home = () => {
   return (
     <div>
-      <div className="fixed inset-0 -z-10 w-screen h-screen overflow-hidden">
+      <div className="fixed inset-0 w-screen h-screen overflow-hidden -z-10">
         <Dither
           waveColor={[0.9, 0.3, 0.3]}
           disableAnimation={false}
@@ -26,6 +27,7 @@ export const Home = () => {
       <Experiences id="Experiences" />
       <TechStack id="TechStack" />
       <Projects id="Projects" />
+      <Contact id="Contact" />
       <Footer id="Footer" />
     </div>
   );
