@@ -9,8 +9,8 @@ import Contact from "../Components/Sections/Contact";
 
 export const Home = () => {
   return (
-    <div>
-      <div className="fixed inset-0 w-screen h-screen overflow-hidden -z-10">
+    <div className="relative">
+      <div className="fixed inset-0 w-screen h-screen overflow-hidden -z-20">
         <Dither
           waveColor={[0.9, 0.3, 0.3]}
           disableAnimation={false}
@@ -23,8 +23,8 @@ export const Home = () => {
       </div>
       <Hero id="Hero" className="z-10" />
       <About id="About" />
-      <Experiences id="Experiences" />
       <TechStack id="TechStack" />
+      <Experiences id="Experiences" />
       <Projects id="Projects" />
       <Contact id="Contact" />
       <Footer id="Footer" />

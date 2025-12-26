@@ -1,0 +1,146 @@
+{
+  "asset": {
+    "generator": "glTF-Transform v4.2.1",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 3000294,
+      "max": [0.273026704788208, 0.30480682849884033, 0.4999989867210388],
+      "min": [-0.2730267643928528, -0.30480682849884033, -0.4999989867210388],
+      "bufferView": 0,
+      "byteOffset": 0
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 3000294,
+      "bufferView": 0,
+      "byteOffset": 12
+    },
+    {
+      "type": "VEC2",
+      "componentType": 5126,
+      "count": 3000294,
+      "bufferView": 0,
+      "byteOffset": 24
+    },
+    {
+      "type": "SCALAR",
+      "componentType": 5125,
+      "count": 3000294,
+      "bufferView": 1,
+      "byteOffset": 0
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 96009408,
+      "byteStride": 32,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 96009408,
+      "byteLength": 12001176,
+      "target": 34963
+    }
+  ],
+  "samplers": [
+    {
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    }
+  ],
+  "images": [
+    {
+      "name": "tripo_convert_92dd469b-f605-4253-b885-4f5024a864f4.fbm/tripo_model_basecolor.JPEG",
+      "mimeType": "image/jpeg",
+      "uri": "baseColor_1.jpg"
+    },
+    {
+      "name": "tripo_convert_92dd469b-f605-4253-b885-4f5024a864f4.fbm/tripo_model_normal.JPEG",
+      "mimeType": "image/jpeg",
+      "uri": "normal_1.jpg"
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "exel.bin",
+      "byteLength": 108010584
+    }
+  ],
+  "materials": [
+    {
+      "name": "tripo_mat_92dd469b",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.800000011920929, 0.800000011920929, 0.800000011920929, 1
+        ],
+        "roughnessFactor": 0.5,
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        }
+      },
+      "normalTexture": {
+        "index": 1
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "tripo_mesh_92dd469b",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "mode": 4,
+          "material": 0,
+          "indices": 3
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "RootNode",
+      "children": [1]
+    },
+    {
+      "name": "tripo_node_92dd469b",
+      "extras": {
+        "UserProperties": "",
+        "IsNull": false,
+        "DefaultAttributeIndex": 0,
+        "InheritType": 1
+      },
+      "rotation": [-0.707106796640857, 0, 0, 0.7071067657322379],
+      "mesh": 0
+    }
+  ],
+  "scenes": [
+    {
+      "nodes": [0]
+    }
+  ],
+  "scene": 0,
+  "extensionsUsed": ["KHR_materials_volume"]
+}
