@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
+import { motion, useScroll } from "motion/react";
+import { useAboutAnimations } from "../../Constants/sectionAnimations";
 import Header from "../Typography/Header";
 import Text from "../Typography/Text";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 interface AboutProps {
   id: string;
@@ -14,49 +15,16 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
     target: sectionRef,
     offset: ["start start", "end end"],
   });
-  const slideFromLeft = useSpring(
-    useTransform(scrollYProgress, [0, 0.3], ["-40vw", "0vw"]),
-    { stiffness: 120, damping: 20 }
-  );
-
-  const slideFromRight = useSpring(
-    useTransform(scrollYProgress, [0, 0.4], ["40vw", "0vw"]),
-    { stiffness: 120, damping: 30 }
-  );
-  const imageLeftFast = slideFromLeft;
-  const imageLeftSlow = useSpring(
-    useTransform(scrollYProgress, [0, 0.35], ["-40vw", "0vw"]),
-    { stiffness: 120, damping: 25 }
-  );
-  const imageRight = slideFromRight;
-  const textMotion = useSpring(
-    useTransform(scrollYProgress, [0, 1], [1000, 0]),
-    {
-      stiffness: 150,
-      damping: 20,
-    }
-  );
-  const headerY = useTransform(scrollYProgress, [0, 0.15], [24, 0]);
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 1]);
-
-  const headerMotion = {
-    y: useSpring(headerY, {
-      stiffness: 120,
-      damping: 20,
-    }),
-    opacity: useSpring(headerOpacity, {
-      stiffness: 120,
-      damping: 20,
-    }),
-  };
+  const { headerMotion, imageLeftFast, imageLeftSlow, imageRight, textMotion } =
+    useAboutAnimations(scrollYProgress);
   return (
     <motion.section
       ref={sectionRef}
       id={id}
       className={`
-        font-accent h-[200vh] text-center mt-10 ${className}`}
+        font-accent h-[400vh] text-center mt-10 ${className} `}
     >
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="sticky top-0 h-[200vh] overflow-hidden">
         <motion.div style={headerMotion}>
           <Header
             className="font-bold mb-30 lg:mb-0 lg:text-6xl xl:text-8xl"

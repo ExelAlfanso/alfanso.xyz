@@ -36,8 +36,11 @@ const Navbar = () => {
   function handleNavClick(href: string) {
     if (href.startsWith("#")) {
       const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (href.startsWith("#Projects") && element) {
+        console.log("Scrolling to Projects");
+        element.scrollIntoView({ behavior: "smooth", block: "end" });
+      } else {
+        element?.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
     setIsOpen(false);

@@ -1,15 +1,13 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import { motion, useScroll } from "motion/react";
+import {
+  useExperiencesAnimations,
+  useTimelineItemMotion,
+} from "../../Constants/sectionAnimations";
 import Header from "../Typography/Header";
 import Text from "../Typography/Text";
 import { timelineDatas } from "../../Datas/timelineDatas";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "motion/react";
-import { Link } from "react-router-dom";
 import {
   personalProjectDatas,
   collaborativeProjectDatas,
@@ -26,43 +24,8 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
     offset: ["start start", "end end"],
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("Page scroll: ", latest);
-  });
-  const headerY = useTransform(scrollYProgress, [0, 0.15], [24, 0]);
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 1]);
-
-  const headerMotion = {
-    y: useSpring(headerY, {
-      stiffness: 120,
-      damping: 20,
-    }),
-    opacity: useSpring(headerOpacity, {
-      stiffness: 120,
-      damping: 20,
-    }),
-  };
-  const slideUp = useSpring(
-    useTransform(scrollYProgress, [0.4, 0.45], [1000, 0]),
-    {
-      stiffness: 150,
-      damping: 20,
-    }
-  );
-  const cardsAnimation = useSpring(
-    useTransform(scrollYProgress, [0.7, 0.8], [1000, 0]),
-    {
-      stiffness: 150,
-      damping: 20,
-    }
-  );
-  const imgMotion = useSpring(
-    useTransform(scrollYProgress, [0, 0.1], [500, 0]),
-    {
-      stiffness: 150,
-      damping: 20,
-    }
-  );
+  const { headerMotion, headerY, slideUp, cardsAnimation, imgMotion } =
+    useExperiencesAnimations(scrollYProgress);
   const projectSections = [
     { title: "Personal Works", data: personalProjectDatas },
     { title: "Collaborative Works", data: collaborativeProjectDatas },
@@ -71,7 +34,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
     <div ref={sectionRef} className="relative">
       <motion.section
         id={id}
-        className={`relative z-0 font-accent h-[500vh] ${className}`}
+        className={`relative z-0 font-accent h-[600vh] ${className}`}
       >
         <div className="sticky top-0 w-full h-screen overflow-hidden">
           <motion.div style={headerMotion}>
@@ -90,21 +53,10 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
               style={{ y: imgMotion }}
             />
             {timelineDatas.map((item, index) => {
-              const itemMotion = useSpring(
-                useTransform(
-                  scrollYProgress,
-                  [
-                    0,
-                    index === 0 ? 0.1 : (index / timelineDatas.length) * 0.4,
-                    ((index + 1) / timelineDatas.length) * 0.4,
-                    0.4,
-                  ],
-                  [500, 0, 0, 0]
-                ),
-                {
-                  stiffness: 150,
-                  damping: 20,
-                }
+              const itemMotion = useTimelineItemMotion(
+                scrollYProgress,
+                index,
+                timelineDatas.length
               );
               return (
                 <motion.div
@@ -129,9 +81,12 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
           </motion.div>
         </div>
         <motion.section
+          id={"Projects"}
           style={{ y: slideUp }}
-          className="sticky top-0 w-full h-screen"
+          className="sticky top-0 w-full h-screen overflow-hidden"
         >
+          <div className="absolute left-0 right-0 z-50 w-full h-32 pointer-events-none -top-30 bg-gradient-to-t from-primary to-transparent"></div>
+
           <motion.div className="relative flex flex-col items-center justify-center w-full h-screen px-5 mb-10 overflow-hidden md:px-10 lg:px-20 bg-primary">
             <motion.div className="flex flex-col w-full gap-10 lg:flex-row md:gap-16 lg:gap-20">
               {projectSections.map((section) => (
@@ -182,7 +137,6 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
                 </motion.div>
               ))}
             </motion.div>
-            {/* Gradient fade out effect at bottom */}
           </motion.div>
         </motion.section>
         <div className="absolute left-0 right-0 z-50 w-full h-32 pointer-events-none -bottom-30 bg-gradient-to-b from-primary to-transparent"></div>

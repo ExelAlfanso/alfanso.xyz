@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Typography/Header";
 import { motion } from "framer-motion";
 import { fadeInAnimation } from "../../Constants/animationVariants";
 import Text from "../Typography/Text";
@@ -18,10 +17,10 @@ const Contact: React.FC<ContactProps> = ({ id, className }) => {
       id={id}
       className={`mb-75 ${className} flex flex-col items-center justify-center my-60`}
     >
-      <Header className="mb-10 font-bold" size="subtitle">
+      <h1 className="px-20 mb-10 text-4xl font-bold text-center text-accent lg:text-5xl">
         Have a Big Idea? Let’s Build It Together.
-      </Header>
-      <Text className="w-1/2 text-[24px] text-center mb-10 ">
+      </h1>
+      <Text className="w-1/2 text-[16px] lg:text-[24px] text-center mb-10 ">
         I love turning complex problems into elegant solutions. From the first
         sketch to the final launch, I’m here to help you navigate the journey.
       </Text>
