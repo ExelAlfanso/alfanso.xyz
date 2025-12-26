@@ -51,7 +51,7 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
       mass: 0.8,
     }
   );
-  const scale = useSpring(useTransform(scrollYProgress, [0, 0.5], [1, 10]), {
+  const scale = useSpring(useTransform(scrollYProgress, [0, 1], [1, 5]), {
     stiffness: 80,
     damping: 20,
     mass: 0.8,
@@ -120,24 +120,17 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
               <img src={tech.icon} alt={tech.label} className="w-12 h-12" />
             </motion.div>
           ))}
-          <Canvas className="absolute w-full h-full -z-10">
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[10, 10, 5]} intensity={1} />
+          <Canvas style={{ height: "600px", width: "600px" }} className="z-10">
+            <ambientLight intensity={0.8} />
+            <directionalLight position={[5, 5, 5]} intensity={1} />
             <OrbitControls enabled={false}></OrbitControls>
-            {/* <Suspense fallback={null}>
+            <Suspense fallback={null}>
               <Exel
                 rotationX={rotationX}
                 rotationY={rotationY}
                 scale={scale}
               ></Exel>
-            </Suspense> */}
-            <mesh
-              rotation={[rotationX.get(), rotationY.get(), 0]}
-              scale={scale.get()}
-            >
-              <boxGeometry args={[1, 1, 1]} />
-              <meshStandardMaterial color="#646cff" />
-            </mesh>
+            </Suspense>
             <Environment preset="sunset"></Environment>
           </Canvas>
         </motion.div>
