@@ -6,7 +6,6 @@ Command: npx gltfjsx@6.5.3 exel.gltf
 import { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { Mesh, Group } from "three";
-
 interface ModelProps {
   [key: string]: any;
   rotationX?: any;
@@ -20,7 +19,7 @@ export default function Model({
   scale,
   ...props
 }: ModelProps) {
-  const { nodes, materials } = useGLTF("/textures/exel.gltf");
+  const { nodes, materials } = useGLTF("/exel.glb");
   const groupRef = useRef<Group>(null);
 
   useEffect(() => {
@@ -64,4 +63,4 @@ export default function Model({
   );
 }
 
-useGLTF.preload("/textures/exel.gltf");
+useGLTF.preload("/exel.glb");

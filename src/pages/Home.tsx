@@ -2,10 +2,10 @@ import Hero from "../Components/Sections/Hero";
 import About from "../Components/Sections/About";
 import TechStack from "../Components/Sections/TechStack";
 import Experiences from "../Components/Sections/Experiences";
-import Projects from "../Components/Sections/Projects";
 import Footer from "../Components/Footer";
 import Dither from "../Components/Background/Dither";
 import Contact from "../Components/Sections/Contact";
+import Navbar from "../Components/Navbar";
 
 export const Home = () => {
   return (
@@ -21,11 +21,11 @@ export const Home = () => {
           waveSpeed={0.05}
         />
       </div>
+      <Navbar></Navbar>
       <Hero id="Hero" className="z-10" />
       <About id="About" />
       <TechStack id="TechStack" />
       <Experiences id="Experiences" />
-      <Projects id="Projects" />
       <Contact id="Contact" />
       <Footer id="Footer" />
     </div>
