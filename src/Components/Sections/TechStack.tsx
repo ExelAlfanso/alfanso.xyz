@@ -121,15 +121,23 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
             </motion.div>
           ))}
           <Canvas className="absolute w-full h-full -z-10">
-            <ambientLight />
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[10, 10, 5]} intensity={1} />
             <OrbitControls enabled={false}></OrbitControls>
-            <Suspense fallback={null}>
+            {/* <Suspense fallback={null}>
               <Exel
                 rotationX={rotationX}
                 rotationY={rotationY}
                 scale={scale}
               ></Exel>
-            </Suspense>
+            </Suspense> */}
+            <mesh
+              rotation={[rotationX.get(), rotationY.get(), 0]}
+              scale={scale.get()}
+            >
+              <boxGeometry args={[1, 1, 1]} />
+              <meshStandardMaterial color="#646cff" />
+            </mesh>
             <Environment preset="sunset"></Environment>
           </Canvas>
         </motion.div>

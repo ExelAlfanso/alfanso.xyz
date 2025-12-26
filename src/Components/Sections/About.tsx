@@ -20,13 +20,13 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
   );
 
   const slideFromRight = useSpring(
-    useTransform(scrollYProgress, [0, 0.5], ["40vw", "0vw"]),
-    { stiffness: 120, damping: 20 }
+    useTransform(scrollYProgress, [0, 0.4], ["40vw", "0vw"]),
+    { stiffness: 120, damping: 30 }
   );
   const imageLeftFast = slideFromLeft;
   const imageLeftSlow = useSpring(
-    useTransform(scrollYProgress, [0, 0.5], ["-30vw", "0vw"]),
-    { stiffness: 120, damping: 22 }
+    useTransform(scrollYProgress, [0, 0.35], ["-40vw", "0vw"]),
+    { stiffness: 120, damping: 25 }
   );
   const imageRight = slideFromRight;
   const textMotion = useSpring(
