@@ -88,7 +88,7 @@ export const personalProjectDatas: ProjectItems[] = [
     category: "WEB DEVELOPMENT",
     description:
       "Rensa is a web application that allows users to share photos with their settings and connect with others.",
-    href: "https://triv-quiz-app.vercel.app/",
+    href: "https://github.com/ExelAlfanso/Rensa",
     categories: ["React.JS", "MongoDB", "Next.JS", "Express.JS", "Cloudinary"],
   },
 ];

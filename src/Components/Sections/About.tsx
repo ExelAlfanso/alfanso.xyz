@@ -1,13 +1,7 @@
 import React, { useRef } from "react";
 import Header from "../Typography/Header";
 import Text from "../Typography/Text";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 interface AboutProps {
   id: string;

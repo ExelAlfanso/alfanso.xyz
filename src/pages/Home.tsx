@@ -3,7 +3,6 @@ import About from "../Components/Sections/About";
 import TechStack from "../Components/Sections/TechStack";
 import Experiences from "../Components/Sections/Experiences";
 import Projects from "../Components/Sections/Projects";
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Dither from "../Components/Background/Dither";
 import Contact from "../Components/Sections/Contact";
