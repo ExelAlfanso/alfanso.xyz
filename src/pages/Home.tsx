@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Hero from "../Components/Sections/Hero";
 import About from "../Components/Sections/About";
 import TechStack from "../Components/Sections/TechStack";
@@ -13,7 +12,7 @@ export const Home = () => {
   return (
     <div className="relative">
       <SplashScreen></SplashScreen>
-      <div className="fixed inset-0 w-screen h-screen overflow-hidden -z-20">
+      <div className="fixed inset-0 w-screen h-screen overflow-hidden -z-20 pointer-events-none">
         <Dither
           waveColor={[0.9, 0.3, 0.3]}
           disableAnimation={false}
