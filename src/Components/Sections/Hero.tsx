@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ id, className }) => {
       <div className="flex flex-col items-left justify-center">
         <Header
           size="title"
-          className="lg:text-left lg:mb-5 h-30 lg:h-50 xl:h-80 w-85 lg:w-100 xl:w-130 "
+          className="lg:text-left lg:mb-5 h-30 lg:h-50 xl:h-80 w-85 lg:w-100 xl:w-135 "
         >
           <TextType
             text={"Hi! My name is Exel Boy Alfanso."}
