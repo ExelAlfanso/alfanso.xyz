@@ -13,12 +13,25 @@ interface TechStackProps {
 
 const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [isXL, setIsXL] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkXL = () => setIsXL(window.innerWidth >= 1000);
+    checkXL();
+    window.addEventListener("resize", checkXL);
+    return () => window.removeEventListener("resize", checkXL);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start center", "end center"],
   });
   const { sectionSlideLeft, rotationX, rotationY, scale, cardMotions } =
-    useTechStackAnimations(scrollYProgress, techStackDatas.length);
+    useTechStackAnimations(
+      scrollYProgress,
+      techStackDatas.length,
+      isXL ? 250 : 150
+    );
 
   return (
     <motion.section
@@ -41,7 +54,7 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
         </motion.div>
         <motion.div
           style={{ x: sectionSlideLeft }}
-          className="flex flex-col items-center justify-center my-20"
+          className="flex flex-col items-center justify-center w-screen h-auto my-20 lg:w-1/2 aspect-square"
         >
           {techStackDatas.map((tech, index) => (
             <motion.div
@@ -54,10 +67,14 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
               }}
               className="absolute p-3 rounded-lg bg-primary"
             >
-              <img src={tech.icon} alt={tech.label} className="w-12 h-12" />
+              <img
+                src={tech.icon}
+                alt={tech.label}
+                className="w-5 h-5 lg:w-12 lg:h-12"
+              />
             </motion.div>
           ))}
-          <Canvas className="z-10">
+          <Canvas>
             <ambientLight intensity={0.8} />
             <directionalLight position={[5, 5, 5]} intensity={1} />
             <OrbitControls enabled={false}></OrbitControls>

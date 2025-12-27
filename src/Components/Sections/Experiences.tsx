@@ -88,12 +88,12 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
           <div className="absolute left-0 right-0 z-50 w-full h-32 pointer-events-none -top-30 bg-gradient-to-t from-primary to-transparent"></div>
 
           <motion.div className="relative flex flex-col items-center justify-center w-full h-screen px-5 mb-10 overflow-hidden md:px-10 lg:px-20 bg-primary">
-            <motion.div className="flex flex-col w-full gap-10 lg:flex-row md:gap-16 lg:gap-20">
+            <motion.div className="flex flex-col w-full gap-10 lg:flex-row md:gap-16 lg:gap-20 ">
               {projectSections.map((section) => (
                 <motion.div
                   key={section.title}
                   style={{ y: cardsAnimation }}
-                  className="flex-1"
+                  className="flex-1 "
                 >
                   <motion.div style={{ y: headerY }}>
                     <Header
@@ -103,7 +103,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
                       {section.title}
                     </Header>
                   </motion.div>
-                  <div className="flex flex-col items-center justify-center gap-5 mx-auto md:grid md:grid-cols-2 lg:grid-cols-2 md:gap-6 lg:gap-5">
+                  <div className="grid grid-cols-2 gap-5 mx-auto md:gap-6 lg:gap-5 ">
                     {section.data.slice(0, 4).map((item) => (
                       <motion.div
                         key={item.name}

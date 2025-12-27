@@ -130,7 +130,7 @@ export const useProjectsAnimations = (scrollYProgress: MotionValue<number>) => {
 export const useTechStackAnimations = (
   scrollYProgress: MotionValue<number>,
   totalCards: number,
-  radius = 280
+  radius = 150
 ) => {
   const sectionSlideLeft = useSpring(
     useTransform(scrollYProgress, [0, 0.5], ["-1000vw", "0"]),
@@ -159,7 +159,7 @@ export const useTechStackAnimations = (
     }
   );
 
-  const scale = useSpring(useTransform(scrollYProgress, [0, 0.7], [1, 5]), {
+  const scale = useSpring(useTransform(scrollYProgress, [0, 0.7], [1, 3]), {
     stiffness: 80,
     damping: 20,
     mass: 0.8,

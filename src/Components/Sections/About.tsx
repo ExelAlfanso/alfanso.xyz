@@ -34,7 +34,7 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
           </Header>
         </motion.div>
         <div className="relative flex flex-col items-center justify-center w-full gap-30 md:gap-15 lg:flex-row lg:justify-evenly h-200 xl:px-20">
-          <div className="relative w-100 xl:w-150 md:w-150 ">
+          <div className="relative lg:relative w-100 aspect-square xl:w-150 md:w-150 ">
             <motion.img
               initial={{ visibility: "hidden" }}
               animate={{ visibility: "visible" }}
@@ -48,7 +48,7 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
               style={{ x: imageLeftSlow }}
               src="/me3.png"
               alt="Me"
-              className="absolute right-5 -bottom-10 max-w-1/2 md:max-w-2/3 lg:max-w-3/4"
+              className="absolute right-10 -bottom-10 max-w-1/2 md:max-w-2/3 lg:max-w-3/4"
               loading="lazy"
             />
             <motion.div
@@ -64,17 +64,18 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
               </Text>
             </motion.div>
           </div>
-          <div className="relative flex items-center justify-center w-80 lg:w-100 xl:w-110">
+          <div className="relative flex items-center justify-center">
             <motion.img
               style={{ x: imageRight }}
               src="/me2.png"
               alt="Me"
               loading="lazy"
+              className="max-w-1/2 md:max-w-2/3 lg:max-w-3/4"
             />
 
             <motion.div
               style={{ y: textMotion }}
-              className="absolute bottom-0 flex flex-col -left-10 xl:-left-40"
+              className="absolute bottom-0 flex flex-col left-10 xl:-left-40"
             >
               <Text className="text-[24px] xl:text-[36px] text-left font-bold">
                 FULL STACK DEVELOPER
