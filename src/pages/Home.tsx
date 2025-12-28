@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "motion/react";
 import Hero from "../Components/Sections/Hero";
 import About from "../Components/Sections/About";
 import TechStack from "../Components/Sections/TechStack";
@@ -9,9 +11,18 @@ import Navbar from "../Components/Navbar";
 import SplashScreen from "../Components/SplashScreen";
 
 export const Home = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="relative">
-      <SplashScreen></SplashScreen>
+      <AnimatePresence>
+        {showSplash && <SplashScreen />}
+      </AnimatePresence>
       <div className="fixed inset-0 w-screen h-screen overflow-hidden -z-20 pointer-events-none">
         <Dither
           waveColor={[0.9, 0.3, 0.3]}

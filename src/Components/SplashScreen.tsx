@@ -5,8 +5,8 @@ export default function SplashScreen() {
     <motion.div
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
-      transition={{ delay: 2, duration: 1 }}
-      className={`fixed inset-0 z-[1000] flex items-center justify-center bg-primary text-accent transition-opacity`}
+      transition={{ delay: 2.5, duration: 1 }}
+      className={`fixed inset-0 z-[1000] flex items-center pointer-events-none justify-center bg-primary text-accent transition-opacity`}
     >
       <div className="relative flex items-center justify-center">
         <motion.svg
