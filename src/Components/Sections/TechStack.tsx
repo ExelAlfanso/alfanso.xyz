@@ -14,24 +14,40 @@ interface TechStackProps {
 const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isXL, setIsXL] = React.useState(false);
+  const [isMdUp, setIsMdUp] = React.useState(false);
 
   React.useEffect(() => {
-    const checkXL = () => setIsXL(window.innerWidth >= 1000);
-    checkXL();
-    window.addEventListener("resize", checkXL);
-    return () => window.removeEventListener("resize", checkXL);
+    const updateBreakpoints = () => {
+      const width = window.innerWidth;
+      setIsXL(width >= 1000);
+      setIsMdUp(width >= 768);
+    };
+
+    updateBreakpoints();
+    window.addEventListener("resize", updateBreakpoints);
+    return () => window.removeEventListener("resize", updateBreakpoints);
   }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start center", "end center"],
   });
-  const { sectionSlideLeft, rotationX, rotationY, scale, cardMotions } =
-    useTechStackAnimations(
-      scrollYProgress,
-      techStackDatas.length,
-      isXL ? 250 : 150
-    );
+  const {
+    sectionSlideLeft,
+    sectionSlideUp,
+    rotationX,
+    rotationY,
+    scale,
+    cardMotions,
+  } = useTechStackAnimations(
+    scrollYProgress,
+    techStackDatas.length,
+    isXL ? 250 : 150
+  );
+
+  const sectionMotionStyle = isMdUp
+    ? { x: sectionSlideLeft }
+    : { y: sectionSlideUp };
 
   return (
     <motion.section
@@ -41,10 +57,10 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
     >
       <div className="sticky top-0 flex flex-col items-center w-full h-screen overflow-hidden lg:flex-row justify-evenly">
         <motion.div
-          style={{ x: sectionSlideLeft }}
-          className="z-20 flex flex-col items-start justify-start gap-10 my-20 mb-10 lg:justify-center lg:items-center lg:w-1/3"
+          style={sectionMotionStyle}
+          className="z-20 flex flex-col items-center justify-start gap-10 px-20 my-20 mb-10 lg:items-start lg:justify-center lg:w-1/3 md:px-0"
         >
-          <h1 className="text-5xl font-bold text-center text-accent lg:text-left ">
+          <h1 className="text-4xl font-bold text-center text-accent lg:text-left ">
             The stack powering my work.
           </h1>
           <Text className="text-xl text-center lg:pr-20 xl:pr-40 lg:text-left">
@@ -53,8 +69,8 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
           </Text>
         </motion.div>
         <motion.div
-          style={{ x: sectionSlideLeft }}
-          className="flex flex-col items-center justify-center w-screen h-auto my-20 lg:w-1/2 aspect-square"
+          style={sectionMotionStyle}
+          className="flex flex-col items-center justify-center w-screen h-auto md:mb-20 lg:w-1/2 aspect-square"
         >
           {techStackDatas.map((tech, index) => (
             <motion.div

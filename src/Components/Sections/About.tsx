@@ -27,14 +27,14 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
       <div className="sticky top-0 h-[200vh] overflow-hidden">
         <motion.div style={headerMotion}>
           <Header
-            className="font-bold mb-30 lg:mb-0 lg:text-6xl xl:text-8xl"
+            className="font-bold mb-30 lg:mb-0 md:text-5xl lg:text-6xl xl:text-8xl"
             size="subtitle"
           >
             About
           </Header>
         </motion.div>
-        <div className="relative flex flex-col items-center justify-center w-full gap-30 md:gap-15 lg:flex-row lg:justify-evenly h-200 xl:px-20">
-          <div className="relative lg:relative w-100 aspect-square xl:w-150 md:w-150 ">
+        <div className="relative flex flex-col items-center justify-center w-full px-10 gap-30 md:gap-15 md:flex-row md:justify-evenly md:h-200 ">
+          <div className="relative w-100 aspect-square md:w-150">
             <motion.img
               initial={{ visibility: "hidden" }}
               animate={{ visibility: "visible" }}
@@ -52,7 +52,7 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
               loading="lazy"
             />
             <motion.div
-              className="text-left lg:w-1/2"
+              className="z-10 text-left lg:w-1/2"
               style={{ y: textMotion }}
             >
               <Text className="text-[16px] font-bold xl:text-[30px] ">

@@ -141,6 +141,15 @@ export const useTechStackAnimations = (
     }
   );
 
+  const sectionSlideUp = useSpring(
+    useTransform(scrollYProgress, [0, 0.5], ["100vh", "0vh"]),
+    {
+      stiffness: 80,
+      damping: 20,
+      mass: 0.8,
+    }
+  );
+
   const rotationY = useSpring(
     useTransform(scrollYProgress, [0, 0.2, 0.5], [0, 1, Math.PI * 1.5]),
     {
@@ -190,5 +199,12 @@ export const useTechStackAnimations = (
     };
   });
 
-  return { sectionSlideLeft, rotationX, rotationY, scale, cardMotions };
+  return {
+    sectionSlideLeft,
+    sectionSlideUp,
+    rotationX,
+    rotationY,
+    scale,
+    cardMotions,
+  };
 };
