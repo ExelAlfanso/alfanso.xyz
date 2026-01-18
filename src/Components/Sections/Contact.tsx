@@ -15,7 +15,7 @@ const Contact: React.FC<ContactProps> = ({ id, className }) => {
       initial="initial"
       whileInView="animate"
       id={id}
-      className={`mb-75 ${className} flex flex-col items-center justify-center my-60`}
+      className={`mb-75 ${className} flex flex-col items-center justify-center my-100`}
     >
       <h1 className="px-20 mb-10 text-4xl font-bold text-center text-accent lg:text-5xl">
         Have a Big Idea? Let’s Build It Together.

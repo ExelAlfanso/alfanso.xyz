@@ -34,18 +34,18 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
     <div ref={sectionRef} className="relative">
       <motion.section
         id={id}
-        className={`relative z-0 font-accent h-[600vh] ${className}`}
+        className={`relative z-0 font-accent h-[700vh] md:h-[600vh] ${className}`}
       >
         <div className="sticky top-0 w-full h-screen overflow-hidden">
           <motion.div style={headerMotion}>
             <Header
-              className="w-full mx-auto mb-10 font-bold text-center md:mb-16 lg:mb-20 "
+              className="w-full mx-auto mb-10 font-bold text-center xl:mb-20 "
               size="subtitle"
             >
               Experiences & Achievements
             </Header>
           </motion.div>
-          <motion.div className="flex flex-col items-center justify-center w-full px-5 py-5 md:py-8 lg:py-10 md:px-20 lg:px-30">
+          <motion.div className="flex flex-col items-center justify-center w-full px-5 py-5 lg:px-30">
             <motion.img
               src="/me4.png"
               alt=""
@@ -56,7 +56,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
               const itemMotion = useTimelineItemMotion(
                 scrollYProgress,
                 index,
-                timelineDatas.length
+                timelineDatas.length,
               );
               return (
                 <motion.div
@@ -83,11 +83,11 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
         <motion.section
           id={"Projects"}
           style={{ y: slideUp }}
-          className="sticky top-0 w-full h-screen overflow-hidden"
+          className="sticky top-0 w-full h-screen"
         >
           <div className="absolute left-0 right-0 z-50 w-full h-32 pointer-events-none -top-30 bg-gradient-to-t from-primary to-transparent"></div>
 
-          <motion.div className="relative flex flex-col items-center justify-center w-full h-screen px-5 mb-10 overflow-hidden md:px-10 lg:px-20 bg-primary">
+          <motion.div className="relative flex flex-col items-center justify-center w-full h-screen overflow-y-auto px-5 mb-10 md:px-10 lg:px-20 bg-primary no-scrollbar">
             <motion.div className="flex flex-col w-full gap-10 lg:flex-row md:gap-16 lg:gap-20 ">
               {projectSections.map((section) => (
                 <motion.div
