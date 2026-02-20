@@ -5,7 +5,11 @@ export type ExperiencesItems = {
 
 export const experiencesDatas: ExperiencesItems[] = [
   {
-    label: "Co-lead of Game Programming Profession in Raion Community 2025",
+    label: "Lead Backend Developer at Raion Community",
+    year: "2025 - present",
+  },
+  {
+    label: "Co-lead of Game Programming Profession at Raion Community 2025",
     year: "2024 - 2025",
   },
   {
