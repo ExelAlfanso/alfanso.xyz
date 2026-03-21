@@ -3,6 +3,7 @@ import { motion, useScroll } from "motion/react";
 import { useAboutAnimations } from "../../Constants/sectionAnimations";
 import Header from "../Typography/Header";
 import Text from "../Typography/Text";
+import { useIsMobile } from "../../Hooks/useIsMobile";
 
 interface AboutProps {
   id: string;
@@ -15,53 +16,61 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
     target: sectionRef,
     offset: ["start start", "end end"],
   });
-  const { headerMotion, imageLeftFast, imageLeftSlow, imageRight, textMotion } =
-    useAboutAnimations(scrollYProgress);
+  const isMobile = useIsMobile();
+  const {
+    headerMotion,
+    imageLeftFast,
+    imageLeftFastMobile,
+    imageLeftSlow,
+    imageLeftSlowMobile,
+    imageRight,
+    textMotion,
+  } = useAboutAnimations(scrollYProgress);
   return (
     <motion.section
       ref={sectionRef}
       id={id}
       className={`
-        font-accent h-[400vh] text-center mt-10 ${className} `}
+        font-accent h-[700vh] text-center mt-10 ${className} `}
     >
       <div className="sticky top-0 h-[200vh] overflow-hidden">
         <motion.div style={headerMotion}>
           <Header
-            className="font-bold mb-30 lg:mb-0 md:text-5xl lg:text-6xl xl:text-8xl"
+            className="font-bold mb-10 lg:mb-0 text-4xl lg:text-6xl xl:text-8xl"
             size="subtitle"
           >
             About
           </Header>
         </motion.div>
-        <div className="relative flex flex-col items-center justify-center w-full px-10 gap-30 md:gap-15 md:flex-row md:justify-evenly md:h-200 ">
+        <div className="relative flex flex-col items-center justify-center w-full px-10  md:gap-15 md:flex-row md:justify-evenly ">
           <div className="relative w-100 aspect-square md:w-150">
             <motion.img
               initial={{ visibility: "hidden" }}
               animate={{ visibility: "visible" }}
-              style={{ x: imageLeftFast }}
+              style={{ x: isMobile ? imageLeftFastMobile : imageLeftFast }}
               src="/me1.png"
               alt="Me"
               loading="lazy"
-              className="max-w-1/2 md:max-w-2/3 lg:max-w-3/4"
+              className="max-w-1/3 md:max-w-2/3 lg:max-w-3/4 "
             />
             <motion.img
-              style={{ x: imageLeftSlow }}
+              style={{ x: isMobile ? imageLeftSlowMobile : imageLeftSlow }}
               src="/me3.png"
               alt="Me"
-              className="absolute right-10 -bottom-10 max-w-1/2 md:max-w-2/3 lg:max-w-3/4"
+              className="absolute right-0 bottom-20 md:right-10 md:-bottom-10 max-w-1/3 md:max-w-2/3 lg:max-w-3/4"
               loading="lazy"
             />
             <motion.div
-              className="z-10 text-left lg:w-1/2"
+              className="z-10 text-left lg:w-1/2 flex flex-col items-start ml-15 md: ml-0"
               style={{ y: textMotion }}
             >
-              <Text className="text-[16px] font-bold xl:text-[30px] ">
+              <h2 className="text-[16px] font-bold xl:text-[30px] ">
                 Exel Boy Alfanso,
-              </Text>
-              <Text className="text-[12px] xl:text-[16px] font-light w-1/3 lg:w-2/3 xl:w-2/3">
+              </h2>
+              <p className="text-[12px] xl:text-[16px] font-light w-1/3 lg:w-2/3 xl:w-2/3">
                 He is a third-year Computer Science student at University of
                 Brawijaya
-              </Text>
+              </p>
             </motion.div>
           </div>
           <div className="relative flex items-center justify-center">
@@ -75,14 +84,14 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
 
             <motion.div
               style={{ y: textMotion }}
-              className="absolute bottom-0 flex flex-col left-10 xl:-left-40"
+              className="absolute -bottom-10 md:bottom-0 flex flex-col left-10 xl:-left-40"
             >
-              <Text className="text-[24px] xl:text-[36px] text-left font-bold">
+              <h2 className="text-[24px] xl:text-[36px] text-left font-bold">
                 FULL STACK DEVELOPER
-              </Text>
-              <Text className="text-[24px] xl:text-[36px] text-left font-bold">
+              </h2>
+              <h2 className="text-[24px] xl:text-[36px] text-left font-bold">
                 GAME DEVELOPER
-              </Text>
+              </h2>
             </motion.div>
           </div>
         </div>

@@ -13,10 +13,6 @@ export const achievementDatas: AchievementItems[] = [
     year: "2025",
   },
   {
-    label: "2nd Place in Internal Game Jam Raion Community",
-    year: "2024",
-  },
-  {
     label: "Violetta's 2nd Place in GameJam+ 2025 Indonesia",
     year: "2025",
   },

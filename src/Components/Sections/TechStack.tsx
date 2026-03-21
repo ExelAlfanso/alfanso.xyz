@@ -42,7 +42,7 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
   } = useTechStackAnimations(
     scrollYProgress,
     techStackDatas.length,
-    isXL ? 250 : 150
+    isXL ? 250 : 150,
   );
 
   const sectionMotionStyle = isMdUp
@@ -55,7 +55,7 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
       id={id}
       className={`h-[400vh] z-50  ${className}`}
     >
-      <div className="sticky top-0 flex flex-col items-center w-full h-screen overflow-hidden lg:flex-row justify-evenly">
+      <div className="sticky top-0 flex flex-col items-center w-full h-screen lg:flex-row justify-evenly">
         <motion.div
           style={sectionMotionStyle}
           className="z-20 flex flex-col items-center justify-start gap-10 px-20 my-20 mb-10 lg:items-start lg:justify-center lg:w-1/3 md:px-0"
@@ -70,7 +70,7 @@ const TechStack: React.FC<TechStackProps> = ({ id, className }) => {
         </motion.div>
         <motion.div
           style={sectionMotionStyle}
-          className="flex flex-col items-center justify-center w-screen h-auto md:mb-20 lg:w-1/2 aspect-square"
+          className="flex flex-col items-center justify-center w-screen h-auto aspect-square md:mb-20 lg:w-1/2 "
         >
           {techStackDatas.map((tech, index) => (
             <motion.div
