@@ -49,6 +49,8 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
             <motion.img
               src="/me4.png"
               alt=""
+              loading="lazy"
+              decoding="async"
               className="absolute bottom-0 z-10 hidden w-40 pointer-events-none xl:block md:w-60 lg:w-auto "
               style={{ y: imgMotion }}
             />
@@ -64,7 +66,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
                   key={index}
                   className={`text-accent mb-4 md:mb-5 w-full`}
                 >
-                  <button className="relative w-full transition-all duration-300 group hover:scale-105">
+                  <div className="relative w-full transition-all duration-300 cursor-default group hover:scale-105">
                     <div className="flex flex-col items-start justify-between gap-2 md:flex-row-reverse md:items-center md:gap-0">
                       <Text className="font-mono transition-all text-sm md:text-lg lg:text-[24px] text-left md:text-right w-full md:w-1/3">
                         {item.label}
@@ -74,7 +76,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
                       </p>
                     </div>
                     <div className="w-full border-b border-accent"></div>
-                  </button>
+                  </div>
                 </motion.div>
               );
             })}
@@ -113,10 +115,14 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
                         <Link
                           to={item.href}
                           target="_blank"
+                          rel="noopener noreferrer"
                           className="relative block w-full overflow-hidden rounded-sm aspect-video"
                         >
                           <img
                             src={item.img}
+                            alt={`${item.name} project screenshot`}
+                            loading="lazy"
+                            decoding="async"
                             className="object-cover w-full h-full transition-transform duration-300 rounded-sm group-hover:scale-110"
                           />
                           <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 bg-black/0 group-hover:bg-black/40">

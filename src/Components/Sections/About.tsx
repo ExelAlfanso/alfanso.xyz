@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { motion, useScroll } from "motion/react";
 import { useAboutAnimations } from "../../Constants/sectionAnimations";
 import Header from "../Typography/Header";
-import Text from "../Typography/Text";
 import { useIsMobile } from "../../Hooks/useIsMobile";
 
 interface AboutProps {
@@ -49,24 +48,26 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
               animate={{ visibility: "visible" }}
               style={{ x: isMobile ? imageLeftFastMobile : imageLeftFast }}
               src="/me1.png"
-              alt="Me"
+              alt="Portrait of Exel Boy Alfanso"
               loading="lazy"
-              className="max-w-1/3 md:max-w-2/3 lg:max-w-3/4 "
+              decoding="async"
+              className="max-w-1/3 md:max-w-2/3 lg:max-w-3/4 object-cover"
             />
             <motion.img
               style={{ x: isMobile ? imageLeftSlowMobile : imageLeftSlow }}
               src="/me3.png"
-              alt="Me"
-              className="absolute right-0 bottom-20 md:right-10 md:-bottom-10 max-w-1/3 md:max-w-2/3 lg:max-w-3/4"
+              alt="Exel Boy Alfanso working on projects"
+              className="absolute right-0 bottom-20 md:right-10 md:-bottom-10 max-w-1/3 md:max-w-2/3 lg:max-w-3/4 object-cover"
               loading="lazy"
+              decoding="async"
             />
             <motion.div
               className="z-10 text-left lg:w-1/2 flex flex-col items-start ml-15 md: ml-0"
               style={{ y: textMotion }}
             >
-              <h2 className="text-[16px] font-bold xl:text-[30px] ">
+              <h3 className="text-[16px] font-bold xl:text-[30px] ">
                 Exel Boy Alfanso,
-              </h2>
+              </h3>
               <p className="text-[12px] xl:text-[16px] font-light w-1/3 lg:w-2/3 xl:w-2/3">
                 He is a third-year Computer Science student at University of
                 Brawijaya
@@ -77,21 +78,22 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
             <motion.img
               style={{ x: imageRight }}
               src="/me2.png"
-              alt="Me"
+              alt="Exel Boy Alfanso - Game Developer and Full Stack Developer"
               loading="lazy"
-              className="max-w-1/2 md:max-w-2/3 lg:max-w-3/4"
+              decoding="async"
+              className="max-w-1/2 md:max-w-2/3 lg:max-w-3/4 object-cover"
             />
 
             <motion.div
               style={{ y: textMotion }}
               className="absolute -bottom-10 md:bottom-0 flex flex-col left-10 xl:-left-40"
             >
-              <h2 className="text-[24px] xl:text-[36px] text-left font-bold">
+              <p className="text-[24px] xl:text-[36px] text-left font-bold m-0 leading-tight">
                 FULL STACK DEVELOPER
-              </h2>
-              <h2 className="text-[24px] xl:text-[36px] text-left font-bold">
+              </p>
+              <p className="text-[24px] xl:text-[36px] text-left font-bold m-0 leading-tight">
                 GAME DEVELOPER
-              </h2>
+              </p>
             </motion.div>
           </div>
         </div>

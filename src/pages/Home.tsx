@@ -35,11 +35,13 @@ export const Home = () => {
         />
       </div>
       <Navbar></Navbar>
-      <Hero id="Hero" className="z-10" />
-      <About id="About" />
-      <TechStack id="TechStack" />
-      <Experiences id="Experiences" />
-      <Contact id="Contact" />
+      <main>
+        <Hero id="Hero" className="z-10" />
+        <About id="About" />
+        <TechStack id="TechStack" />
+        <Experiences id="Experiences" />
+        <Contact id="Contact" />
+      </main>
       <Footer id="Footer" />
     </div>
   );
