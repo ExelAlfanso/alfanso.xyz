@@ -17,6 +17,7 @@ export const collaborativeProjectDatas: ProjectItems[] = [
     categories: ["Unity", "C#"],
     href: "https://exelcoeg.itch.io/carrots-my-way-home",
   },
+
   {
     name: "Gloomshine Defense",
     img: "gloomshine.png",
@@ -25,6 +26,24 @@ export const collaborativeProjectDatas: ProjectItems[] = [
       "Gloomshine Defense is a tower defense game set in a fantasy world full of mysterious creatures and challenging levels. Project for IGDX Bootcamp 2023.",
     href: "https://ohm195.itch.io/gloomshine-defense",
     categories: ["Unity", "C#"],
+  },
+  {
+    name: "Rensa",
+    img: "rensa.png",
+    category: "WEB DEVELOPMENT",
+    description:
+      "Rensa is a web application that allows users to share photos with their settings and connect with others.",
+    href: "https://rensa.site",
+    categories: ["React.JS", "MongoDB", "Next.JS", "Express.JS", "Cloudinary"],
+  },
+  {
+    name: "TedXUniversitasBrawijaya",
+    img: "tedx.png",
+    category: "WEB DEVELOPMENT",
+    description:
+      "Rensa is a web application that allows users to share photos with their settings and connect with others.",
+    href: "https://tedxuniversitasbrawijaya.com",
+    categories: ["React.JS", "tRPC", "Astro", "HTML", "CSS", "Cloudflare"],
   },
   {
     name: "Rupan",
@@ -81,14 +100,5 @@ export const personalProjectDatas: ProjectItems[] = [
       "TrivQuiz is a fun and interactive quiz application that tests your knowledge across various topics, built using React.js. This is my mini project for DOT Indonesia Internship 2025 application.",
     href: "https://triv-quiz-app.vercel.app/",
     categories: ["React.JS", "UI/UX"],
-  },
-  {
-    name: "Rensa",
-    img: "rensa.png",
-    category: "WEB DEVELOPMENT",
-    description:
-      "Rensa is a web application that allows users to share photos with their settings and connect with others.",
-    href: "https://rensa.site",
-    categories: ["React.JS", "MongoDB", "Next.JS", "Express.JS", "Cloudinary"],
   },
 ];

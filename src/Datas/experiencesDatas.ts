@@ -13,8 +13,8 @@ export const experiencesDatas: ExperiencesItems[] = [
     year: "2024 - 2025",
   },
   {
-    label: "IGDX Bootcamp 2024 Mentee",
-    year: "2024",
+    label: "Software Engineer Volunteer at TedXUniversitasBrawijaya 2026",
+    year: "2026",
   },
   {
     label: "Bakti BCA 2025 Scholarship Awardee",

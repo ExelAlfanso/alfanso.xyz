@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
-import { motion, useScroll } from "motion/react";
+import React, { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useScroll } from "motion/react";
 import {
   useExperiencesAnimations,
   useTimelineItemMotion,
@@ -11,6 +10,7 @@ import { timelineDatas } from "../../Datas/timelineDatas";
 import {
   personalProjectDatas,
   collaborativeProjectDatas,
+  type ProjectItems,
 } from "../../Datas/projectDatas";
 interface ExperiencesProps {
   id: string;
@@ -19,6 +19,7 @@ interface ExperiencesProps {
 
 const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [activeProject, setActiveProject] = useState<ProjectItems | null>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
@@ -30,6 +31,35 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
     { title: "Personal Works", data: personalProjectDatas },
     { title: "Collaborative Works", data: collaborativeProjectDatas },
   ];
+
+  useEffect(() => {
+    if (!activeProject) {
+      return;
+    }
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setActiveProject(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscapeKey);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      window.removeEventListener("keydown", handleEscapeKey);
+      document.body.style.overflow = "";
+    };
+  }, [activeProject]);
+
+  function openProjectModal(project: ProjectItems) {
+    setActiveProject(project);
+  }
+
+  function getProjectImagePath(imgPath: string) {
+    return imgPath.startsWith("/") ? imgPath : `/${imgPath}`;
+  }
+
   return (
     <div ref={sectionRef} className="relative">
       <motion.section
@@ -106,20 +136,19 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
                     </Header>
                   </motion.div>
                   <div className="grid grid-cols-2 gap-5 mx-auto md:gap-6 lg:gap-5 ">
-                    {section.data.slice(0, 4).map((item) => (
+                    {section.data.map((item) => (
                       <motion.div
                         key={item.name}
                         layout
                         className="flex flex-col items-start justify-center w-full mb-6 md:mb-8 lg:mb-0 group"
                       >
-                        <Link
-                          to={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="relative block w-full overflow-hidden rounded-sm aspect-video"
+                        <button
+                          type="button"
+                          onClick={() => openProjectModal(item)}
+                          className="relative block w-full overflow-hidden rounded-sm cursor-pointer aspect-video"
                         >
                           <img
-                            src={item.img}
+                            src={getProjectImagePath(item.img)}
                             alt={`${item.name} project screenshot`}
                             loading="lazy"
                             decoding="async"
@@ -130,7 +159,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
                               View Project
                             </span>
                           </div>
-                        </Link>
+                        </button>
                         <Header
                           size="description"
                           className="w-full mt-2 font-mono text-base text-left transition-colors duration-300 md:mt-3 md:text-lg lg:text-xl group-hover:text-accent"
@@ -145,6 +174,95 @@ const Experiences: React.FC<ExperiencesProps> = ({ id, className }) => {
             </motion.div>
           </motion.div>
         </motion.section>
+        <AnimatePresence>
+          {activeProject && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setActiveProject(null)}
+              className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm md:p-8"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-modal-title"
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.97, y: 30 }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+                onClick={(event) => event.stopPropagation()}
+                className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto border rounded-xl border-accent/20 bg-secondary/95 p-5 shadow-2xl md:p-8 no-scrollbar"
+              >
+                <button
+                  type="button"
+                  onClick={() => setActiveProject(null)}
+                  aria-label="Close project details modal"
+                  className="absolute z-10 flex items-center justify-center w-10 h-10 text-xl transition-colors border rounded-full cursor-pointer right-4 top-4 border-accent/40 text-accent hover:text-white hover:border-white"
+                >
+                  X
+                </button>
+
+                <div className="grid items-start grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+                  <div>
+                    <img
+                      src={getProjectImagePath(activeProject.img)}
+                      alt={`${activeProject.name} full preview`}
+                      className="object-cover w-full rounded-lg aspect-video"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-5">
+                    <Text className="text-xs tracking-[0.22em] uppercase md:text-sm text-accent-two">
+                      {activeProject.category}
+                    </Text>
+
+                    <h3
+                      id="project-modal-title"
+                      className="text-3xl leading-tight md:text-4xl text-accent"
+                    >
+                      {activeProject.name}
+                    </h3>
+
+                    <p className="text-sm leading-relaxed md:text-base font-mono text-accent/95">
+                      {activeProject.description}
+                    </p>
+
+                    <div>
+                      <p className="mb-2 text-xs tracking-[0.18em] uppercase md:text-sm text-accent/80">
+                        Categories
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {activeProject.categories.map((category) => (
+                          <span
+                            key={category}
+                            className="px-3 py-1 text-xs border rounded-full md:text-sm border-accent/40 bg-primary/60 text-accent font-mono"
+                          >
+                            {category}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="pt-1">
+                      <a
+                        href={activeProject.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 text-sm font-semibold transition-colors border rounded-full md:text-base border-accent text-accent hover:text-white hover:border-white"
+                      >
+                        Visit Project
+                      </a>
+                      <p className="mt-3 text-xs break-all md:text-sm text-accent/70 font-mono">
+                        URL: {activeProject.href}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div className="absolute left-0 right-0 z-50 w-full h-32 pointer-events-none -bottom-30 bg-gradient-to-b from-primary to-transparent"></div>
       </motion.section>
     </div>
