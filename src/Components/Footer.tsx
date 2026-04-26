@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = ({ id, className }) => {
           </div>
         </div>
         <Text className="font-accent text-xs sm:text-base">
-          Exel Boy Alfanso - Full Stack Developer
+          Exel Boy Alfanso - Software Engineer & Game Developer
         </Text>
         <Text className="font-p text-xs sm:text-base">
           exel.alfanso@gmail.com

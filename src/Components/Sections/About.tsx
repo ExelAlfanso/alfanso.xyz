@@ -78,7 +78,7 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
             <motion.img
               style={{ x: imageRight }}
               src="/me2.png"
-              alt="Exel Boy Alfanso - Game Developer and Full Stack Developer"
+              alt="Exel Boy Alfanso - Game Developer and Software Engineer"
               loading="lazy"
               decoding="async"
               className="max-w-1/2 md:max-w-2/3 lg:max-w-3/4 object-cover"
@@ -89,7 +89,7 @@ const About: React.FC<AboutProps> = ({ id, className }) => {
               className="absolute -bottom-10 md:bottom-0 flex flex-col left-10 xl:-left-40"
             >
               <p className="text-[24px] xl:text-[36px] text-left font-bold m-0 leading-tight">
-                FULL STACK DEVELOPER
+                SOFTWARE ENGINEER
               </p>
               <p className="text-[24px] xl:text-[36px] text-left font-bold m-0 leading-tight">
                 GAME DEVELOPER
