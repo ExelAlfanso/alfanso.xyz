@@ -101,4 +101,13 @@ export const personalProjectDatas: ProjectItems[] = [
     href: "https://triv-quiz-app.vercel.app/",
     categories: ["React.JS", "UI/UX"],
   },
+  {
+    name: "One Deep Question",
+    img: "onedeepquestion.png",
+    category: "WEB DEVELOPMENT",
+    description:
+      "One Deep Question is a reflective web product centered on a single shared daily prompt. Every user sees the same question on a given date. Users can submit one public response per browser per day, either anonymously or under a custom display name, and read other responses in a calm, reading-first interface.",
+    href: "https://one-deep-question.alfanso.xyz/",
+    categories: ["Next.JS", "PostgreSQL", "Drizzle"],
+  },
 ];
