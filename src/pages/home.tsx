@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
 import { AnimatePresence } from "motion/react";
-import Hero from "../Components/Sections/Hero";
-import About from "../Components/Sections/About";
-import TechStack from "../Components/Sections/TechStack";
-import Experiences from "../Components/Sections/Experiences";
-import Footer from "../Components/Footer";
-import Dither from "../Components/Background/Dither";
-import Contact from "../Components/Sections/Contact";
-import Navbar from "../Components/Navbar";
-import SplashScreen from "../Components/SplashScreen";
+import { useEffect, useState } from "react";
+import Dither from "../Components/background/dither";
+import Footer from "../Components/footer";
+import Navbar from "../Components/navbar";
+import SplashScreen from "../Components/splash-screen";
+import About from "../features/about/components/about";
+import Contact from "../features/contact/components/contact";
+import Experiences from "../features/experience/components/experience";
+import Hero from "../features/hero/components/hero";
+import TechStack from "../features/tech-stack/components/tech-stack";
 
 export const Home = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -20,23 +20,21 @@ export const Home = () => {
 
   return (
     <div className="relative">
-      <AnimatePresence>
-        {showSplash && <SplashScreen />}
-      </AnimatePresence>
-      <div className="fixed inset-0 w-screen h-screen overflow-hidden -z-20 pointer-events-none">
+      <AnimatePresence>{showSplash && <SplashScreen />}</AnimatePresence>
+      <div className="pointer-events-none fixed inset-0 -z-20 h-screen w-screen overflow-hidden">
         <Dither
-          waveColor={[0.9, 0.3, 0.3]}
+          colorNum={4}
           disableAnimation={false}
           mouseRadius={0.3}
-          colorNum={4}
           waveAmplitude={0.2}
+          waveColor={[0.9, 0.3, 0.3]}
           waveFrequency={2}
           waveSpeed={0.05}
         />
       </div>
-      <Navbar></Navbar>
+      <Navbar />
       <main>
-        <Hero id="Hero" className="z-10" />
+        <Hero className="z-10" id="Hero" />
         <About id="About" />
         <TechStack id="TechStack" />
         <Experiences id="Experiences" />

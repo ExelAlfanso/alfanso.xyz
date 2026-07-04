@@ -1,9 +1,9 @@
-import React from "react";
+import type React from "react";
 
 interface HeadingProps {
+  alignment?: "left" | "center" | "right";
   children: React.ReactNode;
   className?: string;
-  alignment?: "left" | "center" | "right";
   size?: "title" | "subtitle" | "description";
 }
 

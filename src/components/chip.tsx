@@ -5,15 +5,13 @@ interface ChipProps {
   className?: string;
 }
 
-const Chip: React.FC<ChipProps> = ({ children, className }) => {
-  return (
-    <div
-      className={`flex items-center justiy-center rounded-3xl h-10 w-30 bg-accent ${className}`}
-    >
-      <Dot />
-      {children}
-    </div>
-  );
-};
+const Chip: React.FC<ChipProps> = ({ children, className }) => (
+  <div
+    className={`justiy-center flex h-10 w-30 items-center rounded-3xl bg-accent ${className}`}
+  >
+    <Dot />
+    {children}
+  </div>
+);
 
 export default Chip;

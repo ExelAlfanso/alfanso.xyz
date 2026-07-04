@@ -1,15 +1,13 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
-import Parallax from "../pages/Parallax";
-export const AppRoutes = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/parallax" element={<Parallax />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "../pages/home";
+import Parallax from "../pages/parallax";
+export const AppRoutes = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route element={<Parallax />} path="/parallax" />
+      <Route element={<Home />} path="/" />
+    </Routes>
+  </BrowserRouter>
+);
 
 export default AppRoutes;

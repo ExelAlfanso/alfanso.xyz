@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 
 interface ButtonProps {
   children?: React.ReactNode;
@@ -30,8 +30,9 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      className={`z-10 lg:text-3xl xl:border-2 xl:text-5xl ${className} cursor-pointer rounded-full border-1 border-accent bg-transparent px-5 py-1 font-bold text-accent transition-colors hover:border-white hover:text-white lg:px-7 lg:py-3`}
       onClick={handleClick}
-      className={`lg:text-3xl xl:text-5xl xl:border-2 z-10 ${className} text-accent hover:text-white transition-colors cursor-pointer rounded-full font-bold border-1 border-accent hover:border-white bg-transparent px-5 lg:px-7 py-1 lg:py-3`}
+      type="button"
     >
       <h1>{children}</h1>
     </button>

@@ -1,9 +1,9 @@
-export type FooterData = {
-  id: number;
-  label: string;
+export interface FooterData {
   href: string;
+  id: number;
   isExternal?: boolean;
-};
+  label: string;
+}
 
 export const footerDatas: FooterData[] = [
   {

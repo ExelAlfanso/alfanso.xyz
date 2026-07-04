@@ -1,27 +1,27 @@
-import { MotionValue, useSpring, useTransform } from "motion/react";
+import { type MotionValue, useSpring, useTransform } from "motion/react";
 
 export const useAboutAnimations = (scrollYProgress: MotionValue<number>) => {
   const slideFromLeft = useSpring(
     useTransform(scrollYProgress, [0, 0.6], ["-40vw", "0vw"]),
-    { stiffness: 120, damping: 20 },
+    { stiffness: 120, damping: 20 }
   );
 
   const slideFromRight = useSpring(
     useTransform(scrollYProgress, [0, 0.6], ["40vw", "0vw"]),
-    { stiffness: 120, damping: 25 },
+    { stiffness: 120, damping: 25 }
   );
   const imageLeftFastMobile = useSpring(
     useTransform(scrollYProgress, [0, 0.6], ["-40vw", "15vw"]),
-    { stiffness: 120, damping: 20 },
+    { stiffness: 120, damping: 20 }
   );
   const imageLeftSlowMobile = useSpring(
     useTransform(scrollYProgress, [0, 0.6], ["40vw", "-10vw"]),
-    { stiffness: 120, damping: 20 },
+    { stiffness: 120, damping: 20 }
   );
   const imageLeftFast = slideFromLeft;
   const imageLeftSlow = useSpring(
     useTransform(scrollYProgress, [0, 0.35], ["-40vw", "0vw"]),
-    { stiffness: 120, damping: 25 },
+    { stiffness: 120, damping: 25 }
   );
   const imageRight = slideFromRight;
   const textMotion = useSpring(
@@ -29,7 +29,7 @@ export const useAboutAnimations = (scrollYProgress: MotionValue<number>) => {
     {
       stiffness: 150,
       damping: 20,
-    },
+    }
   );
   const headerY = useTransform(scrollYProgress, [0, 0.15], [24, 0]);
   const headerOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 1]);
@@ -57,7 +57,7 @@ export const useAboutAnimations = (scrollYProgress: MotionValue<number>) => {
 };
 
 export const useExperiencesAnimations = (
-  scrollYProgress: MotionValue<number>,
+  scrollYProgress: MotionValue<number>
 ) => {
   const headerY = useTransform(scrollYProgress, [0, 0.15], [24, 0]);
   const headerOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 1]);
@@ -78,21 +78,21 @@ export const useExperiencesAnimations = (
     {
       stiffness: 150,
       damping: 20,
-    },
+    }
   );
   const cardsAnimation = useSpring(
     useTransform(scrollYProgress, [0.6, 0.8], [500, 0]),
     {
       stiffness: 150,
       damping: 20,
-    },
+    }
   );
   const imgMotion = useSpring(
     useTransform(scrollYProgress, [0, 0.1], [500, 0]),
     {
       stiffness: 150,
       damping: 20,
-    },
+    }
   );
 
   return { headerMotion, headerY, slideUp, cardsAnimation, imgMotion };
@@ -101,7 +101,7 @@ export const useExperiencesAnimations = (
 export const useTimelineItemMotion = (
   scrollYProgress: MotionValue<number>,
   index: number,
-  total: number,
+  total: number
 ) => {
   const startProgress = (index / total) * 0.4;
   const endProgress = ((index + 1) / total) * 0.4;
@@ -110,12 +110,12 @@ export const useTimelineItemMotion = (
     useTransform(
       scrollYProgress,
       [startProgress, endProgress, 0.4],
-      [500, 0, 0],
+      [500, 0, 0]
     ),
     {
       stiffness: 150,
       damping: 20,
-    },
+    }
   );
 };
 
@@ -130,7 +130,7 @@ export const useProjectsAnimations = (scrollYProgress: MotionValue<number>) => {
     {
       stiffness: 100,
       damping: 20,
-    },
+    }
   );
 
   const cardAnimation = {
@@ -143,9 +143,7 @@ export const useProjectsAnimations = (scrollYProgress: MotionValue<number>) => {
 };
 
 export const useTechStackAnimations = (
-  scrollYProgress: MotionValue<number>,
-  totalCards: number,
-  radius = 150,
+  scrollYProgress: MotionValue<number>
 ) => {
   const sectionSlideLeft = useSpring(
     useTransform(scrollYProgress, [0, 0.5], ["-1000vw", "0"]),
@@ -153,7 +151,7 @@ export const useTechStackAnimations = (
       stiffness: 80,
       damping: 20,
       mass: 0.8,
-    },
+    }
   );
 
   const sectionSlideUp = useSpring(
@@ -162,7 +160,7 @@ export const useTechStackAnimations = (
       stiffness: 80,
       damping: 20,
       mass: 0.8,
-    },
+    }
   );
 
   const rotationY = useSpring(
@@ -171,7 +169,7 @@ export const useTechStackAnimations = (
       stiffness: 80,
       damping: 20,
       mass: 0.8,
-    },
+    }
   );
 
   const rotationX = useSpring(
@@ -180,7 +178,7 @@ export const useTechStackAnimations = (
       stiffness: 80,
       damping: 20,
       mass: 0.8,
-    },
+    }
   );
 
   const scale = useSpring(useTransform(scrollYProgress, [0, 0.7], [1, 3]), {
@@ -189,37 +187,41 @@ export const useTechStackAnimations = (
     mass: 0.8,
   });
 
-  const cardMotions = Array.from({ length: totalCards }, (_, index) => {
-    const angle = (index / totalCards) * Math.PI * 2;
-    const offsetX = Math.cos(angle) * radius;
-    const offsetY = Math.sin(angle) * radius;
-
-    return {
-      opacity: useSpring(useTransform(scrollYProgress, [0.1, 0.3], [0, 1]), {
-        stiffness: 100,
-        damping: 20,
-      }),
-      scale: useSpring(useTransform(scrollYProgress, [0.1, 0.3], [0.5, 1]), {
-        stiffness: 100,
-        damping: 20,
-      }),
-      x: useSpring(useTransform(scrollYProgress, [0.1, 0.5], [0, offsetX]), {
-        stiffness: 80,
-        damping: 20,
-      }),
-      y: useSpring(useTransform(scrollYProgress, [0.1, 0.5], [0, offsetY]), {
-        stiffness: 80,
-        damping: 20,
-      }),
-    };
-  });
-
   return {
     sectionSlideLeft,
     sectionSlideUp,
     rotationX,
     rotationY,
     scale,
-    cardMotions,
+  };
+};
+
+export const useTechStackCardMotion = (
+  scrollYProgress: MotionValue<number>,
+  index: number,
+  total: number,
+  radius = 150
+) => {
+  const angle = (index / total) * Math.PI * 2;
+  const offsetX = Math.cos(angle) * radius;
+  const offsetY = Math.sin(angle) * radius;
+
+  return {
+    opacity: useSpring(useTransform(scrollYProgress, [0.1, 0.3], [0, 1]), {
+      stiffness: 100,
+      damping: 20,
+    }),
+    scale: useSpring(useTransform(scrollYProgress, [0.1, 0.3], [0.5, 1]), {
+      stiffness: 100,
+      damping: 20,
+    }),
+    x: useSpring(useTransform(scrollYProgress, [0.1, 0.5], [0, offsetX]), {
+      stiffness: 80,
+      damping: 20,
+    }),
+    y: useSpring(useTransform(scrollYProgress, [0.1, 0.5], [0, offsetY]), {
+      stiffness: 80,
+      damping: 20,
+    }),
   };
 };

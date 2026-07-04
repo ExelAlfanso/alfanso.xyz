@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-import { navigationItems } from "../Datas/navbarDatas";
-import BurgerMenu from "./Icons/BurgerMenu";
-import { useScrollSpy } from "../Hooks/useScrollSpy";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { navigationItems } from "../data/navbar-data";
+import { useScrollSpy } from "../hooks/use-scroll-spy";
+import BurgerMenu from "./icons/burger-menu";
 
 const Navbar = () => {
   const activeSection = useScrollSpy(
@@ -24,8 +24,11 @@ const Navbar = () => {
         setIsOpen(false);
       }
     };
-    if (isOpen) document.addEventListener("mousedown", handleClickOutside);
-    else document.removeEventListener("mousedown", handleClickOutside);
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -46,48 +49,44 @@ const Navbar = () => {
     setIsOpen(false);
   }
   return (
-    <nav className="flex flex-col items-center justify-center w-full mt-10">
+    <nav className="mt-10 flex w-full flex-col items-center justify-center">
       <motion.div
+        className="fixed z-10 mt-30 hidden items-center justify-center gap-10 rounded-full bg-primary py-5 font-heading xs:text-[10px] transition-all md:flex md:w-3/4 xl:text-[32px]"
         style={{ opacity: navOpacity }}
-        className="md:w-3/4 hidden md:flex justify-center items-center fixed z-10 mt-30 py-5 font-heading xs:text-[10px] xl:text-[32px] rounded-full gap-10 bg-primary transition-all"
       >
-        {navigationItems.map((navItem, index) => {
-          return (
-            <button
-              onClick={() => handleNavClick(navItem.href)}
-              key={index}
-              className={`cursor-pointer top-0 hover:scale-110 text-accent hover:text-accent-two transition-all duration-500 ${
-                activeSection === navItem.href
-                  ? "text-accent-two"
-                  : "text-accent"
-              } `}
-            >
-              {navItem.label}
-            </button>
-          );
-        })}
+        {navigationItems.map((navItem) => (
+          <button
+            className={`top-0 cursor-pointer text-accent transition-all duration-500 hover:scale-110 hover:text-accent-two ${
+              activeSection === navItem.href ? "text-accent-two" : "text-accent"
+            } `}
+            key={navItem.href}
+            onClick={() => handleNavClick(navItem.href)}
+            type="button"
+          >
+            {navItem.label}
+          </button>
+        ))}
       </motion.div>
       <div
+        className="absolute z-10 flex w-full justify-end p-5 md:hidden"
         ref={sideBarRef}
-        className="absolute z-10 flex justify-end w-full p-5 md:hidden"
       >
-        {navigationItems.map((navItem, index) => {
-          return (
-            <button
-              onClick={() => handleNavClick(navItem.href)}
-              key={index}
-              className={`cursor-pointer fixed right-0 top-0 h-full w-80 hover:scale-110 text-accent hover:text-accent-two transition-all duration-500 ${
-                navItem.bg
-              } ${isOpen ? navItem.translate : "translate-x-full"}`}
-            >
-              <h1 className="-rotate-90 origin-top-left z-10 absolute top-180 text-[2rem] lg:text-[3rem] font-accent">
-                {`<<<<<<${navItem.label.toUpperCase()}>>>>>>`}
-              </h1>
-            </button>
-          );
-        })}
-        <button onClick={handleClick}>
-          <BurgerMenu className="transition-all cursor-pointer hover:scale-130"></BurgerMenu>
+        {navigationItems.map((navItem) => (
+          <button
+            className={`fixed top-0 right-0 h-full w-80 cursor-pointer text-accent transition-all duration-500 hover:scale-110 hover:text-accent-two ${
+              navItem.bg
+            } ${isOpen ? navItem.translate : "translate-x-full"}`}
+            key={navItem.href}
+            onClick={() => handleNavClick(navItem.href)}
+            type="button"
+          >
+            <h1 className="absolute top-180 z-10 origin-top-left -rotate-90 font-accent text-[2rem] lg:text-[3rem]">
+              {`<<<<<<${navItem.label.toUpperCase()}>>>>>>`}
+            </h1>
+          </button>
+        ))}
+        <button onClick={handleClick} type="button">
+          <BurgerMenu className="cursor-pointer transition-all hover:scale-130" />
         </button>
       </div>
     </nav>

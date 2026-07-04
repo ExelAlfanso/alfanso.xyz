@@ -1,11 +1,11 @@
-export type NavItem = {
-  id: number;
-  label: string;
-  href: string;
-  isExternal?: boolean;
+export interface NavItem {
   bg: string;
+  href: string;
+  id: number;
+  isExternal?: boolean;
+  label: string;
   translate: string;
-};
+}
 
 export const navigationItems: NavItem[] = [
   {

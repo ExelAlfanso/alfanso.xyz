@@ -7,15 +7,17 @@ export function useScrollSpy(selectors: string[], offset = 100) {
     const handleScroll = () => {
       let current = "";
 
-      selectors.forEach((selector) => {
+      for (const selector of selectors) {
         const element = document.querySelector(selector);
+
         if (element) {
           const rect = element.getBoundingClientRect();
+
           if (rect.top <= offset && rect.bottom >= offset) {
             current = selector;
           }
         }
-      });
+      }
 
       setActiveId(current);
     };
